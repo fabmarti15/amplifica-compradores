@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amplifica · Quién nos podría comprar</title>
+<meta name="description" content="Mapa de potenciales compradores de Amplifica y qué hay que construir para llegar ahí.">
+<style>
+:root{
+  --ink:#14171a;
+  --ink-2:#4a545e;
+  --ink-3:#7c8894;
+  --bg:#fbfaf7;
+  --card:#ffffff;
+  --line:#e6e2da;
+  --line-2:#f0ede7;
+  --acc:#0f6b5c;
+  --acc-soft:#e6f2ef;
+  --warn:#a8412a;
+  --warn-soft:#fbeee9;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font:400 17px/1.62 ui-sans-serif,-apple-system,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  letter-spacing:-0.011em;
+  padding:0 0 5rem;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+
+/* ---------- header ---------- */
+header{padding:56px 0 24px}
+.kicker{
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--acc);font-weight:650;margin:0 0 14px
+}
+h1{
+  font-size:clamp(30px,7.5vw,44px);line-height:1.1;letter-spacing:-0.032em;
+  font-weight:680;margin:0
+}
+.lede{font-size:18px;color:var(--ink-2);margin:0}
+.lede b{color:var(--ink);font-weight:600}
+.meta{
+  margin-top:26px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:14px;color:var(--ink-3);display:flex;gap:16px;flex-wrap:wrap
+}
+
+/* ---------- intro note ---------- */
+.note{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 22px 20px;margin:8px 0 40px;
+}
+.note p{margin:0 0 2px;line-height:1.5}
+.note p.gap{margin-bottom:14px}
+.note .sign{color:var(--ink-3);margin-top:14px}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px;scroll-margin-top:20px}
+h2{
+  font-size:clamp(21px,5vw,26px);line-height:1.22;letter-spacing:-0.024em;
+  font-weight:670;margin:0 0 6px
+}
+h2 .num{color:var(--acc);font-variant-numeric:tabular-nums;margin-right:10px;font-weight:600}
+.sub{color:var(--ink-3);font-size:15px;margin:0 0 20px}
+p{margin:0 0 12px}
+.lines p{margin:0 0 1px;line-height:1.5}
+.lines p.gap{margin-bottom:14px}
+
+/* ---------- lists ---------- */
+ul{margin:0 0 16px;padding:0;list-style:none}
+li{
+  position:relative;padding:0 0 0 22px;margin:0 0 10px;line-height:1.5
+}
+li:before{
+  content:"";position:absolute;left:2px;top:.66em;
+  width:6px;height:6px;border-radius:50%;background:var(--acc)
+}
+ul.bad li:before{background:var(--warn)}
+
+/* ---------- tables ---------- */
+.tbl{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;margin:0 0 18px
+}
+table{width:100%;border-collapse:collapse;font-size:15.5px}
+th{
+  text-align:left;font-weight:620;font-size:12px;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--ink-3);padding:13px 16px;border-bottom:1px solid var(--line);
+  background:#faf8f4;vertical-align:bottom
+}
+td{padding:13px 16px;border-bottom:1px solid var(--line-2);vertical-align:top;line-height:1.42}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600}
+.num-c{font-variant-numeric:tabular-nums;white-space:nowrap}
+.pill{
+  display:inline-block;padding:2px 9px;border-radius:999px;font-size:12.5px;
+  font-weight:600;white-space:nowrap;line-height:1.5
+}
+.p-red{background:var(--warn-soft);color:var(--warn)}
+.p-amb{background:#fdf3e2;color:#8a5a10}
+.p-ok{background:var(--acc-soft);color:var(--acc)}
+
+/* mobile: tables become cards */
+@media (max-width:620px){
+  .tbl{border:0;background:transparent;border-radius:0}
+  table,tbody,tr,td{display:block;width:100%}
+  thead{display:none}
+  tr{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:6px 2px;margin:0 0 12px
+  }
+  td{
+    border-bottom:1px solid var(--line-2);padding:11px 16px 13px;line-height:1.45
+  }
+  td:last-child{border-bottom:0}
+  td:before{
+    content:attr(data-l);display:block;
+    font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink-3);font-weight:650;line-height:1.4;margin-bottom:3px
+  }
+  td:first-child{
+    font-size:17.5px;font-weight:660;letter-spacing:-.02em;
+    background:#faf8f4;border-radius:10px 10px 0 0;
+    padding-top:13px;padding-bottom:12px
+  }
+  td:first-child:before{display:none}
+}
+
+/* ---------- tooltip term ---------- */
+.t{
+  color:var(--acc);font-weight:560;cursor:pointer;
+  border-bottom:1.5px dotted var(--acc);
+  padding-bottom:.5px;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+.t:active,.t.on{background:var(--acc-soft);border-radius:3px}
+
+#pop{
+  position:fixed;z-index:60;max-width:330px;width:calc(100vw - 32px);
+  background:#1b1f23;color:#f3f1ec;border-radius:12px;padding:14px 16px;
+  font-size:15px;line-height:1.48;
+  box-shadow:0 12px 40px rgba(0,0,0,.28),0 2px 8px rgba(0,0,0,.16);
+  opacity:0;transform:translateY(6px) scale(.98);pointer-events:none;
+  transition:opacity .15s ease,transform .15s ease;
+}
+#pop.show{opacity:1;transform:none;pointer-events:auto}
+#pop .term{
+  display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:#8fd6c6;font-weight:650;margin-bottom:6px
+}
+#pop:after{
+  content:"";position:absolute;width:12px;height:12px;background:#1b1f23;
+  transform:rotate(45deg);
+}
+#pop.below:after{top:-5px}
+#pop.above:after{bottom:-5px}
+
+/* ---------- source note ---------- */
+.src{
+  background:#faf8f4;border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 22px;margin:0 0 18px;font-size:15.5px;line-height:1.55
+}
+.src h3{
+  font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--acc);
+  font-weight:650;margin:0 0 12px
+}
+.src p{margin:0 0 12px;color:var(--ink-2)}
+.src p:last-child{margin-bottom:0}
+.src p b{color:var(--ink)}
+.src ul{margin:0 0 14px}
+.src li{margin:0 0 9px;color:var(--ink-2)}
+.src li b{color:var(--ink)}
+.src li:before{width:5px;height:5px;top:.7em;background:var(--ink-3)}
+.tag{
+  display:inline-block;padding:1px 8px;border-radius:999px;font-size:11.5px;
+  font-weight:650;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;
+  vertical-align:1.5px;margin-right:6px
+}
+.t-ver{background:var(--acc-soft);color:var(--acc)}
+.t-inf{background:#fdf3e2;color:#8a5a10}
+.who{margin:0 0 0;font-size:15.5px}
+.who p{margin:0 0 10px;color:var(--ink-2)}
+.who p:last-child{margin-bottom:0}
+
+/* ---------- glossary ---------- */
+.gloss{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.gloss .row{padding:15px 18px;border-bottom:1px solid var(--line-2)}
+.gloss .row:last-child{border-bottom:0}
+.gloss dt{font-weight:640;font-size:16px;margin:0 0 3px;letter-spacing:-.015em}
+.gloss dd{margin:0;color:var(--ink-2);font-size:15.5px;line-height:1.48}
+dl{margin:0}
+
+footer{
+  margin-top:52px;padding-top:22px;border-top:1px solid var(--line);
+  font-size:13.5px;color:var(--ink-3);line-height:1.6
+}
+footer a{color:var(--ink-3)}
+a{color:var(--acc)}
+
+.hr{height:1px;background:var(--line);margin:0 0 42px;border:0}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header>
+  <p class="kicker">Amplifica · Nota de directorio</p>
+  <h1>Quién nos podría comprar algún día</h1>
+</header>
+
+<hr class="hr">
+
+<section>
+  <h2><span class="num">01</span>Los 4 tipos de comprador</h2>
+  <p class="sub">No todos compran lo mismo ni pagan igual</p>
+  <div class="tbl">
+  <table>
+    <thead><tr><th>Tipo</th><th>Quiénes son</th><th>Qué compran</th><th>Múltiplo</th><th>Cuándo</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Consolidador tech</td>
+        <td data-l="Quiénes">Stord, Cart.com, ShipBob</td>
+        <td data-l="Qué compran">Plataforma completa: red física + clientes + software</td>
+        <td data-l="Múltiplo" class="num-c"><span class="t" data-d="Precio de venta = EBITDA × múltiplo. Si la empresa genera 1 millón al año y te pagan 10x, vale 10 millones. El múltiplo lo define qué tan buena se ve la empresa, no cuánto gana.">9–12x</span></td>
+        <td data-l="Cuándo"><span class="pill p-red">3–5 años</span></td>
+      </tr>
+      <tr>
+        <td>Logística global</td>
+        <td data-l="Quiénes">DHL Supply Chain, GXO, Kuehne+Nagel, Maersk</td>
+        <td data-l="Qué compran">Capacidad y geografía. No compran visión</td>
+        <td data-l="Múltiplo" class="num-c">5–7x</td>
+        <td data-l="Cuándo"><span class="pill p-red">5+ años</span></td>
+      </tr>
+      <tr>
+        <td>Regional LatAm</td>
+        <td data-l="Quiénes">Cubbo, Melonn, Skydropx, Chazki</td>
+        <td data-l="Qué compran">El país que les falta. Es fusión más que venta</td>
+        <td data-l="Múltiplo" class="num-c">Se paga en acciones</td>
+        <td data-l="Cuándo"><span class="pill p-ok">12–24 meses</span></td>
+      </tr>
+      <tr>
+        <td>Local / fondos</td>
+        <td data-l="Quiénes">Blue Express, Falabella, Cencosud, Bsale, Defontana</td>
+        <td data-l="Qué compran">Sinergia con lo que ya tienen</td>
+        <td data-l="Múltiplo" class="num-c">Bajo</td>
+        <td data-l="Cuándo"><span class="pill p-amb">Lo más probable hoy</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">02</span>Qué les gusta</h2>
+  <p class="sub">Lo que sube el precio</p>
+  <ul>
+    <li><b>Contratos largos.</b> De 24 meses pa arriba. Es el factor que mas mueve la aguja: con 70% de los ingresos contratados saltas de 5x a 7x</li>
+    <li><b>Ser <span class="t" data-d="Sin activos pesados propios. Arriendas las bodegas en vez de comprarlas. Vale más porque el comprador no hereda ladrillos, hereda una operación.">asset-light</span>.</b> Nuestros <span class="t" data-d="Bodega chica dentro de la ciudad, sin público. Existe solo para despachar rápido. Es lo que tenemos en Santiago.">dark stores</span> arrendados juegan a favor. Comprar galpones jugaria en contra</li>
+    <li><b><span class="t" data-d="Software as a Service. Software que se cobra por suscripción mensual o anual en vez de venderse una vez. Es el modelo que hace que un comprador te valore como empresa de software y no como operador logístico.">SaaS</span>.</b> El software es lo que separa un <span class="t" data-d="Third-party logistics. El operador que guarda, empaca y despacha por otro. Es literalmente lo que hace Amplifica.">3PL</span> de 6x de una plataforma de 10x. Pero tiene que tener <span class="t" data-d="Annual Recurring Revenue. Ingreso recurrente anual, lo que un cliente paga todos los años por suscripción. Es el ingreso que más valoran los compradores porque es predecible.">ARR</span> propio y medible, no ser un costo interno disfrazado de producto</li>
+    <li><b>Cartera repartida.</b> Ningun cliente sobre el 25% de los ingresos</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="num">03</span>Qué los espanta</h2>
+  <p class="sub">Lo que mata el deal en la <span class="t" data-d="Due diligence. La auditoría que hace el comprador antes de cerrar: revisa contratos, números, clientes, arriendos. Muchos deals se caen justo acá.">diligencia</span></p>
+  <ul class="bad">
+    <li><b>Un cliente con mas del 25 o 30% de los ingresos.</b> Les da miedo que ese cliente decida hacerlo el mismo</li>
+    <li><b>Ingresos transaccionales sin contratos.</b> Si el cliente se puede ir mañana, el comprador lo descuenta del precio</li>
+    <li><b>Rotacion alta de gente y dependencia de temporales</b></li>
+    <li><b>Arriendos malos o por vencer.</b> Suena chico, aparece siempre en diligencia</li>
+    <li><b>Un solo pais.</b> En LatAm esto pesa mucho</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="num">04</span>Dónde estamos vs. dónde nos piden estar</h2>
+  <p class="sub">El <span class="t" data-d="Comparar dónde estás hoy contra dónde te exigen estar. La diferencia entre las dos cosas es, literalmente, el plan de trabajo.">gap-analysis</span> contra Stord y Cubbo</p>
+  <div class="tbl">
+  <table>
+    <thead><tr><th>Dimensión</th><th>Amplifica hoy</th><th>Lo que pide Stord</th><th>Lo que pide Cubbo</th><th>Brecha</th></tr></thead>
+    <tbody>
+      <tr><td>Geografía</td><td data-l="Hoy">Solo Santiago</td><td data-l="Stord">Multi-país</td><td data-l="Cubbo">México + Brasil + 1</td><td data-l="Brecha"><span class="pill p-red">Crítica</span></td></tr>
+      <tr><td>Tamaño</td><td data-l="Hoy"><span class="t" data-d="La etapa antes de la primera ronda institucional grande. Todavía estás probando que el modelo escala.">Pre-Serie A</span></td><td data-l="Stord">US$10–25M ingresos</td><td data-l="Cubbo">US$5–15M</td><td data-l="Brecha"><span class="pill p-red">Crítica</span></td></tr>
+      <tr><td><span class="t" data-d="Utilidad antes de intereses, impuestos, depreciación y amortización. En simple: cuánta plata genera la operación en sí misma, antes de contabilidad y financiamiento.">EBITDA</span></td><td data-l="Hoy">Cerca de cero</td><td data-l="Stord">Positivo, o entra vía <span class="t" data-d="Empresa en problemas que se vende barata y rápido. Stord ha comprado varias así.">distressed</span></td><td data-l="Cubbo">Menos exigente</td><td data-l="Brecha"><span class="pill p-amb">Alta</span></td></tr>
+      <tr><td>Software</td><td data-l="Hoy">Turbo interno, sin ARR</td><td data-l="Stord"><span class="t" data-d="Warehouse Management System y Order Management System. El software que controla la bodega y los pedidos. Turbo es exactamente esto.">WMS/OMS</span> propio, obligatorio</td><td data-l="Cubbo">Igual</td><td data-l="Brecha"><span class="pill p-amb">Media</span></td></tr>
+      <tr><td>Contratos</td><td data-l="Hoy">Transaccional</td><td data-l="Stord">70% a 24 meses</td><td data-l="Cubbo">Menos exigente</td><td data-l="Brecha"><span class="pill p-amb">Alta</span></td></tr>
+      <tr><td>Concentración</td><td data-l="Hoy">Por medir</td><td data-l="Stord">Bajo 25%</td><td data-l="Cubbo">Bajo 25%</td><td data-l="Brecha"><span class="pill p-amb">Verificar</span></td></tr>
+      <tr><td>Asset-light</td><td data-l="Hoy">Dark stores arrendados</td><td data-l="Stord">Cumple</td><td data-l="Cubbo">Cumple</td><td data-l="Brecha"><span class="pill p-ok">OK</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="src">
+    <h3>Fuentes de información</h3>
+    <p><b>Aviso primero: ni Stord ni Cubbo publican criterios de adquisición.</b> Ninguna de las dos tiene un documento que diga "compramos empresas con X ingresos". Las dos columnas de arriba son mi inferencia, no una lista oficial. Las armé de tres fuentes distintas y el nivel de confianza no es el mismo en todas.</p>
+    <ul>
+      <li><span class="tag t-ver">Verificado</span><b>Qué ha comprado Stord.</b> De ahí saco el perfil de empresa que les sirve. Ware2Go se lo compraron a UPS y sumó 12 centros de fulfillment. Shipwire se lo compraron a CEVA Logistics, cerró el 1 de enero de 2026 y sumó otros 12 nodos. También asumieron un centro de Quiet Logistics en Dallas. El patrón es claro: <b>compran huella física y nodos, no promesas</b>.</li>
+      <li><span class="tag t-ver">Verificado</span><b>Cuánto pesa Stord.</b> Serie E de más de US$200M liderada por Strike Capital, con deuda de crecimiento de First Citizens y ORIX USA, a una valorización de US$1.500M.</li>
+      <li><span class="tag t-ver">Verificado</span><b>Dónde está Cubbo.</b> Semilla de US$4M liderada por SV Latam Capital y pre-Serie A liderada por Gerdau Next Ventures. Hoy opera en México, Brasil y Colombia.</li>
+      <li><span class="tag t-inf">Inferido</span><b>Los umbrales numéricos.</b> El 70% de ingresos contratados a 24 meses, la concentración bajo 25%, el rango de múltiplos y el requisito de EBITDA positivo <b>no salen de Stord ni de Cubbo</b>. Son los criterios estándar que usa la literatura de M&amp;A de 3PL: Capstone Partners y CT Acquisitions. Los apliqué a nuestro caso, pero son referencia de industria.</li>
+      <li><span class="tag t-inf">Inferido</span><b>Los rangos de ingresos por comprador.</b> Los estimé cruzando el tamaño de lo que cada uno ha comprado con su etapa de financiamiento. Es lo más débil de la tabla. Tratenlo como orden de magnitud.</li>
+    </ul>
+    <p><b>Lo incómodo que apareció mientras revisaba:</b> Cubbo anunció su entrada a Chile ya en 2022 y todavía no llega. Eso se puede leer de dos formas. Que el mercado chileno no les cuadra, o que van a entrar solos cuando les convenga en vez de comprarnos. La segunda es peor para nosotros y es la que no aparece en mi lectura del final.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">05</span>Stord y Cubbo de cerca</h2>
+  <p class="sub">Los dos que importan</p>
+
+  <div class="who">
+    <p><b>Stord</b> — Empresa de Atlanta que junta bodegas, transporte y software en una sola plataforma de fulfillment, y que crece comprando operadores logísticos. Es el <span class="t" data-d="Empresa que compra competidores más chicos para armar una sola plataforma grande. Su crecimiento viene tanto de comprar como de vender.">consolidador</span> más activo del rubro. Sitio: <a href="https://www.stord.com" target="_blank" rel="noopener">stord.com</a> · Sus anuncios de compras: <a href="https://www.stord.com/newsroom" target="_blank" rel="noopener">stord.com/newsroom</a></p>
+    <p><b>Cubbo</b> — Fulfillment urbano para e-commerce en LatAm, fundada por Josu Gurtubay y Brian York. Bodegas dentro de las ciudades y software propio, igual que nuestro modelo. Sitio: <a href="https://www.cubbo.com" target="_blank" rel="noopener">cubbo.com</a></p>
+  </div>
+
+  <div class="tbl">
+  <table>
+    <thead><tr><th>Stord</th><th>Dato</th></tr></thead>
+    <tbody>
+      <tr><td>Tamaño</td><td data-l="Dato">Serie E de más de US$200M liderada por Strike Capital, a valorización de US$1.500M. <a href="https://www.freightwaves.com/news/stord-raises-250m-to-harness-ai-for-e-commerce-logistics" target="_blank" rel="noopener">FreightWaves</a></td></tr>
+      <tr><td>Qué ha comprado</td><td data-l="Dato">Ware2Go, comprada a UPS, +12 centros (<a href="https://www.supplychain247.com/article/stord-buys-ware2go-from-ups-takes-aim-at-amazons-fast-shipping" target="_blank" rel="noopener">fuente</a>) · Shipwire, comprada a CEVA Logistics, cerró 1-ene-2026, +12 nodos (<a href="https://www.prnewswire.com/news-releases/stord-acquires-shipwire-from-ceva-logistics-extending-nationwide-and-global-coverage-302652820.html" target="_blank" rel="noopener">fuente</a>) · centro de Quiet Logistics en Dallas (<a href="https://www.stord.com/newsroom/stord-assumes-quiet-logistics-dallas-center" target="_blank" rel="noopener">fuente</a>)</td></tr>
+      <tr><td>Tickets</td><td data-l="Dato">Desde menos de US$10M hasta plataformas grandes</td></tr>
+      <tr><td>Su jugada</td><td data-l="Dato"><span class="t" data-d="Comprar barato algo que el mercado valora a 3–5x, meterlo dentro de una empresa que el mercado valora a 10x, y que valga 10x de inmediato. Funciona mientras sigan levantando capital.">Arbitraje de valoración</span>: compra logística a 3–5x y la mete bajo su múltiplo tech de 10x</td></tr>
+      <tr><td>Qué busca</td><td data-l="Dato">Red física + clientes <span class="t" data-d="Direct-to-consumer. Marca que le vende directo a la persona, sin pasar por retail. Casi todos nuestros clientes son DTC.">DTC</span> + capacidad en geografías nuevas</td></tr>
+      <tr><td>El riesgo</td><td data-l="Dato">Depende de seguir levantando plata. Si el mercado se enfría, el M&amp;A se congela</td></tr>
+      <tr><td>Cómo entrarles</td><td data-l="Dato">Ser su nodo del Cono Sur. Hay que llegar con clientes internacionales que ya quieren vender en Chile</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tbl">
+  <table>
+    <thead><tr><th>Cubbo</th><th>Dato</th></tr></thead>
+    <tbody>
+      <tr><td>Tamaño</td><td data-l="Dato">Opera en México, Brasil y Colombia. Semilla de US$4M con SV Latam Capital y pre-Serie A liderada por Gerdau Next Ventures (<a href="https://latamlist.com/e-commerce-fulfillment-platform-cubbo-closed-pre-series-a-round/" target="_blank" rel="noopener">fuente</a>)</td></tr>
+      <tr><td>Su jugada</td><td data-l="Dato">Ser el líder de fulfillment e-commerce de LatAm</td></tr>
+      <tr><td>Qué busca</td><td data-l="Dato">Cobertura en países que no tiene. Chile califica, pero ojo: lo anunciaron en 2022 y no han llegado</td></tr>
+      <tr><td>Forma del deal</td><td data-l="Dato">Fusión. Se paga en acciones, no en cash</td></tr>
+      <tr><td>Lo bueno</td><td data-l="Dato">Es alcanzable ahora, sin esperar 3 años</td></tr>
+      <tr><td>Lo malo</td><td data-l="Dato">No es plata en el bolsillo. Es cambiar acciones chilenas por acciones regionales</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">06</span>Glosario</h2>
+  <p class="sub">Todo lo que aparece subrayado, junto</p>
+  <div class="gloss"><dl>
+    <div class="row"><dt>3PL</dt><dd>Third-party logistics. El operador que guarda, empaca y despacha por otro. Es lo que hace Amplifica.</dd></div>
+    <div class="row"><dt>Dark store</dt><dd>Bodega chica dentro de la ciudad, sin público. Existe solo para despachar rápido.</dd></div>
+    <div class="row"><dt>EBITDA</dt><dd>Utilidad antes de intereses, impuestos, depreciación y amortización. En simple: cuánta plata genera la operación en sí misma.</dd></div>
+    <div class="row"><dt>Múltiplo EBITDA</dt><dd>Precio de venta = EBITDA × múltiplo. Si generas 1 millón y te pagan 7x, la empresa vale 7 millones.</dd></div>
+    <div class="row"><dt>ARR</dt><dd>Annual Recurring Revenue. Ingreso recurrente anual, lo que un cliente paga todos los años por suscripción.</dd></div>
+    <div class="row"><dt>Asset-light</dt><dd>Sin activos pesados propios. Arriendas las bodegas en vez de comprarlas. Vale más.</dd></div>
+    <div class="row"><dt>DTC</dt><dd>Direct-to-consumer. Marca que le vende directo a la persona, sin pasar por retail.</dd></div>
+    <div class="row"><dt>WMS / OMS</dt><dd>Warehouse Management System y Order Management System. El software que controla bodega y pedidos. Turbo es esto.</dd></div>
+    <div class="row"><dt>SaaS</dt><dd>Software as a Service. Software que se cobra por suscripción mensual o anual en vez de venderse una vez.</dd></div>
+    <div class="row"><dt>Pre-Serie A</dt><dd>La etapa de financiamiento antes de la primera ronda institucional grande.</dd></div>
+    <div class="row"><dt>Consolidador</dt><dd>Empresa que crece comprando competidores más chicos para armar una sola plataforma grande.</dd></div>
+    <div class="row"><dt>Bolt-on</dt><dd>Compra chica que se enchufa a una plataforma que ya existe, para sumarle capacidad o geografía.</dd></div>
+    <div class="row"><dt>Distressed</dt><dd>Empresa en problemas que se vende barata y rápido.</dd></div>
+    <div class="row"><dt>Arbitraje de valoración</dt><dd>Comprar barato algo que vale 3–5x, meterlo dentro de una empresa valorada a 10x, y que valga 10x altiro.</dd></div>
+    <div class="row"><dt>Concentración de clientes</dt><dd>Qué porcentaje de los ingresos viene de un solo cliente. Mientras más alto, más riesgo ve el comprador.</dd></div>
+    <div class="row"><dt>Due diligence</dt><dd>La auditoría que hace el comprador antes de cerrar. Ahí se caen muchos deals.</dd></div>
+    <div class="row"><dt>Gap-analysis</dt><dd>Comparar dónde estás hoy contra dónde te exigen estar. La diferencia es el plan de trabajo.</dd></div>
+    <div class="row"><dt>Exit</dt><dd>La venta de la empresa. Cuando los socios convierten acciones en plata.</dd></div>
+    <div class="row"><dt>M&amp;A</dt><dd>Mergers and Acquisitions. Fusiones y adquisiciones, el mundo de comprar y vender empresas.</dd></div>
+  </dl></div>
+</section>
+
+<footer>
+  <p>Fuentes: <a href="https://www.stord.com/newsroom" target="_blank" rel="noopener">Stord Newsroom</a>, <a href="https://www.prnewswire.com/news-releases/stord-acquires-shipwire-from-ceva-logistics-extending-nationwide-and-global-coverage-302652820.html" target="_blank" rel="noopener">PR Newswire</a>, <a href="https://www.freightwaves.com/news/stord-raises-250m-to-harness-ai-for-e-commerce-logistics" target="_blank" rel="noopener">FreightWaves</a>, <a href="https://www.supplychain247.com/article/stord-buys-ware2go-from-ups-takes-aim-at-amazons-fast-shipping" target="_blank" rel="noopener">Supply Chain 24/7</a>, <a href="https://latamlist.com/e-commerce-fulfillment-platform-cubbo-closed-pre-series-a-round/" target="_blank" rel="noopener">LatamList</a>, <a href="https://www.cubbo.com" target="_blank" rel="noopener">Cubbo</a>, Capstone Partners (Warehousing &amp; Fulfillment M&amp;A Update), CT Acquisitions (How to Sell a 3PL Company).</p>
+  <p>Documento interno de trabajo. Las cifras de terceros son públicas y están linkeadas. Los umbrales de exigencia atribuidos a Stord y Cubbo son inferencia mía, no criterios publicados por ellos: ver "Fuentes de información" en la sección 04.</p>
+</footer>
+
+</div>
+
+<div id="pop" role="tooltip" aria-hidden="true"></div>
+
+<script>
+(function(){
+  var pop = document.getElementById('pop');
+  var cur = null;
+  var arrowStyle = document.createElement('style');
+  document.head.appendChild(arrowStyle);
+
+  function hide(){
+    if(!cur) return;
+    cur.classList.remove('on');
+    cur = null;
+    pop.classList.remove('show');
+    pop.setAttribute('aria-hidden','true');
+  }
+
+  function show(el){
+    if(cur === el){ hide(); return; }
+    if(cur) cur.classList.remove('on');
+    cur = el;
+    el.classList.add('on');
+
+    var term = el.textContent.trim();
+    pop.innerHTML = '<span class="term"></span>';
+    pop.firstChild.textContent = term;
+    pop.appendChild(document.createTextNode(el.getAttribute('data-d')));
+
+    pop.classList.add('show');
+    pop.setAttribute('aria-hidden','false');
+    pop.style.left = '-9999px';
+    pop.style.top = '0';
+
+    // measure then place
+    var pw = pop.offsetWidth, ph = pop.offsetHeight;
+    var r = el.getBoundingClientRect();
+    var vw = window.innerWidth, vh = window.innerHeight;
+    var M = 12, GAP = 10;
+
+    var left = r.left + r.width/2 - pw/2;
+    left = Math.max(M, Math.min(left, vw - pw - M));
+
+    var below = r.bottom + GAP + ph <= vh - M;
+    // if neither fits well, pick the roomier side
+    if(!below && r.top - GAP - ph < M){
+      below = (vh - r.bottom) > r.top;
+    }
+    var top = below ? r.bottom + GAP : r.top - GAP - ph;
+    top = Math.max(M, Math.min(top, vh - ph - M));
+
+    pop.style.left = Math.round(left) + 'px';
+    pop.style.top  = Math.round(top) + 'px';
+
+    pop.classList.toggle('below', below);
+    pop.classList.toggle('above', !below);
+
+    // arrow horizontal position, clamped inside the bubble
+    var ax = r.left + r.width/2 - left - 6;
+    ax = Math.max(14, Math.min(ax, pw - 26));
+    arrowStyle.textContent = '#pop:after{left:' + Math.round(ax) + 'px}';
+  }
+
+  document.addEventListener('click', function(e){
+    var t = e.target.closest ? e.target.closest('.t') : null;
+    if(t){ e.stopPropagation(); show(t); return; }
+    if(!e.target.closest || !e.target.closest('#pop')) hide();
+  });
+
+  document.querySelectorAll('.t').forEach(function(el){
+    el.setAttribute('tabindex','0');
+    el.setAttribute('role','button');
+    el.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(el); }
+    });
+  });
+
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') hide(); });
+  window.addEventListener('scroll', hide, {passive:true});
+  window.addEventListener('resize', hide);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+archivo/
+CONTEXTO.md
+.DS_Store
+_to_delete/
+.tmp.drive*
+node_modules/
