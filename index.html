@@ -218,7 +218,7 @@ a{color:var(--acc)}
 <hr class="hr">
 
 <section>
-  <h2><span class="num">01</span>Los 4 tipos de comprador</h2>
+  <h2><span class="num">01</span>Los tipos de comprador</h2>
   <p class="sub">No todos compran lo mismo ni pagan igual</p>
   <div class="tbl">
   <table>
@@ -229,7 +229,7 @@ a{color:var(--acc)}
         <td data-l="Quiénes">Stord, Cart.com, ShipBob</td>
         <td data-l="Qué compran">Plataforma completa: red física + clientes + software</td>
         <td data-l="Nos pagarían">6–7x <span class="t" data-d="Enterprise Value dividido por EBITDA. La base estándar para valorar operadores logísticos: se mide contra la utilidad operativa, no contra las ventas.">EV/EBITDA</span> si llegamos asset-light y contratados</td>
-        <td data-l="Se valoran ellos"><span class="t" data-d="Precio dividido por los ingresos anuales, sin mirar la utilidad. Es la base que se usa en software y en empresas de alto crecimiento, porque muchas todavía no tienen utilidad que dividir.">Múltiplo de ventas</span>. Stord: US$3.000M sobre ~US$1.000M de ingresos ≈ 3x</td>
+        <td data-l="Se valoran ellos"><span class="t" data-d="Precio dividido por los ingresos anuales, sin mirar la utilidad. Es la base que se usa en software y en empresas de alto crecimiento, porque muchas todavía no tienen utilidad que dividir.">Múltiplo de ventas</span>. Stord vale US$3.000M y su CEO declaró que llegarían a casi US$1.000M de ingresos este año: ~3x ventas</td>
         <td data-l="Cuándo"><span class="pill p-red">3–5 años</span></td>
       </tr>
       <tr>
@@ -242,15 +242,23 @@ a{color:var(--acc)}
       </tr>
       <tr>
         <td>Regional LatAm</td>
-        <td data-l="Quiénes">Cubbo, Melonn, Skydropx, Chazki</td>
+        <td data-l="Quiénes">Cubbo, Melonn, Skydropx. <b>Chazki no cuenta: ya opera en Chile</b> y además es última milla, no fulfillment</td>
         <td data-l="Qué compran">El país que les falta. Es fusión más que venta</td>
         <td data-l="Nos pagarían">Se paga en acciones. No hay múltiplo de EBITDA, se negocia participación relativa</td>
-        <td data-l="Se valoran ellos">Ventas o ARR, lógica de capital de riesgo</td>
-        <td data-l="Cuándo"><span class="pill p-ok">12–24 meses</span></td>
+        <td data-l="Se valoran ellos">Ventas o ARR, lógica de capital de riesgo. <b>Ninguno ha levantado desde 2022</b>: sus acciones son ilíquidas y con marca de hace cuatro años</td>
+        <td data-l="Cuándo"><span class="pill p-amb">12–24 meses, pero sin caja</span></td>
+      </tr>
+      <tr>
+        <td>Gigante del e-commerce</td>
+        <td data-l="Quiénes">Mercado Libre</td>
+        <td data-l="Qué compran">Nada, por ahora: lo construyen. <b>Es más amenaza que comprador</b></td>
+        <td data-l="Nos pagarían">Sin precedente de compra de 3PL en Chile</td>
+        <td data-l="Se valoran ellos">Empresa pública, ventas y EBITDA</td>
+        <td data-l="Cuándo"><span class="pill p-red">Riesgo, no salida</span></td>
       </tr>
       <tr>
         <td>Local / fondos</td>
-        <td data-l="Quiénes">Blue Express, Falabella, Cencosud, Bsale, Defontana</td>
+        <td data-l="Quiénes">Blue Express (<b>de Copec desde 2023</b>), Falabella, Cencosud, Bsale, Defontana</td>
         <td data-l="Qué compran">Sinergia con lo que ya tienen</td>
         <td data-l="Nos pagarían">4–5x EV/EBITDA mientras sigamos transaccionales</td>
         <td data-l="Se valoran ellos">EBITDA</td>
@@ -262,15 +270,17 @@ a{color:var(--acc)}
 
   <div class="src">
     <h3>Fuentes y por qué hay dos columnas de múltiplo</h3>
-    <p><b>La trampa que casi se nos va.</b> En logística el múltiplo estándar es sobre EBITDA. En software es sobre ventas. Son bases distintas y no se pueden comparar: un 10x de EBITDA y un 10x de ventas pueden diferir en cinco o seis veces el precio. Una versión anterior de esta tabla ponía "9–12x" para el consolidador tech como si fuera EBITDA, y eso <b>se sale por arriba del rango de todo el rubro</b>, que va de 3x a 11x.</p>
-    <p><b>Y lo más importante: el múltiplo del comprador no es lo que el comprador paga.</b> Stord vale ~3x sus ventas, pero compra operadores a 5–7x EBITDA como todo el mundo. La diferencia entre esas dos cosas es su negocio, no el nuestro. Si en la mesa alguien dice "Stord se valora a 10x, entonces a nosotros nos pagan 10x", ahí está el error.</p>
+    <p><b>Son dos bases distintas y no se pueden comparar.</b> En logística el múltiplo se calcula sobre EBITDA. En software, sobre ventas. Un 10x de EBITDA y un 10x de ventas pueden diferir en cinco o seis veces el precio, así que meterlos en una sola columna induce a error.</p>
+    <p><b>Y lo más importante: el múltiplo del comprador no es lo que el comprador paga.</b> Stord se valora sobre ventas, pero a los operadores que compra los paga sobre EBITDA. La diferencia entre esas dos cosas es su negocio, no el nuestro. Si en la mesa alguien dice "Stord se valora a 10x, entonces a nosotros nos pagan 10x", ahí está el error. Aclaración: <b>Stord nunca ha revelado el precio de ninguna de sus ocho adquisiciones</b>, así que lo que pagaría por nosotros es estimación de industria, no dato.</p>
     <ul>
       <li><span class="tag t-ver">Verificado</span><b>Rangos de EBITDA del rubro.</b> 3PL de fulfillment entre 3x y 11x. Transaccional sin contratos 4–5x. Con 70% de ingresos contratados a 24 meses 6–7x. Asset-light 6–7,5x. Fuente: <a href="https://ctacquisitions.com/how-to-sell-a-3pl-business/" target="_blank" rel="noopener">CT Acquisitions</a> y <a href="https://www.capstonepartners.com/insights/article-3pl-market-update/" target="_blank" rel="noopener">Capstone Partners</a>.</li>
-      <li><span class="tag t-ver">Verificado</span><b>Stord.</b> Serie F de US$250M a valorización de US$3.000M en mayo de 2026, el doble de los US$1.500M de doce meses antes. Se acercan a US$1.000M de ingresos, con US$147M de ARR, y son rentables desde 2024. Fuente: <a href="https://www.stord.com/newsroom/stord-raises-250m-series-f" target="_blank" rel="noopener">Stord Newsroom</a> y <a href="https://getlatka.com/companies/stord" target="_blank" rel="noopener">GetLatka</a>.</li>
+      <li><span class="tag t-ver">Verificado</span><b>Stord.</b> Serie F de US$250M a valorización de US$3.000M en mayo de 2026, el doble de los US$1.500M de doce meses antes. Cerca de 100 centros de fulfillment, más de 1.000 clientes, sobre US$15.000M de GMV al año y rentables desde 2024. Fuente: <a href="https://www.stord.com/newsroom/stord-raises-250m-series-f" target="_blank" rel="noopener">Stord Newsroom</a> y <a href="https://www.stord.com/about" target="_blank" rel="noopener">Stord About</a>.</li>
+      <li><span class="tag t-ver">Verificado</span><b>El "~3x ventas" de Stord.</b> Su CEO, Sean Henry, declaró en mayo de 2026 que harían casi US$1.000M de ingresos en el año. Ojo con no confundirlo: los US$15.000M que también publican son <b>GMV</b>, o sea lo que venden sus clientes, no lo que factura Stord. La diferencia es 15 veces.</li>
       <li><span class="tag t-inf">Inferido</span><b>La columna "lo que nos pagarían".</b> No es una oferta ni una conversación con nadie. Es el rango del rubro aplicado a nuestro perfil según qué tan contratados y asset-light lleguemos. Es una referencia, no un precio.</li>
       <li><span class="tag t-inf">Inferido</span><b>La base de valorización de los regionales.</b> Cubbo, Melonn y Skydropx son privadas y no publican ingresos ni valorización. Que se valoren sobre ventas se deduce de su etapa de financiamiento, no de cifras suyas.</li>
     </ul>
-    <p>Para que quede en números nuestros: a US$10M de ingresos con 8% de margen son US$800 mil de EBITDA. A 4–5x eso son US$3,2–4M. A 6–7x son US$4,8–5,6M. <b>Casi todo el trabajo de los próximos dos años es mover ese múltiplo, no solo crecer las ventas.</b></p>
+    <p><b>Casi todo el trabajo de los próximos dos años es mover el múltiplo, no solo crecer las ventas.</b> Pasar de transaccional a contratado, y de software interno a software con ingreso propio, vale más que sumar clientes al ritmo actual. Los números de nuestro caso los corrimos aparte y no van en este documento.</p>
+    <p><b>Y una advertencia que falta en todo análisis de este tipo:</b> el precio de la empresa no es lo que reciben los socios. Entre medio están las <span class="t" data-d="El orden en que se reparte la plata cuando se vende. Los inversionistas con preferencia cobran primero, y recién después se reparte el resto entre los fundadores. En ventas chicas, los fundadores pueden recibir mucho menos de lo que sugiere el precio de la empresa.">preferencias de liquidación</span> del capital ya levantado, los <span class="t" data-d="Parte del precio que queda condicionada a que la empresa cumpla metas después de la venta. Si no se cumplen, no se paga. Puede ser un tercio del total o más.">earn-outs</span>, los ajustes por deuda neta y capital de trabajo, y los compromisos de permanencia de los fundadores. <b>Antes de discutir a qué múltiplo vendemos, hay que saber cuánto de eso llega efectivamente a los socios.</b> Ese cálculo no está hecho.</p>
   </div>
 </section>
 
@@ -302,15 +312,15 @@ a{color:var(--acc)}
   <p class="sub">El <span class="t" data-d="Comparar dónde estás hoy contra dónde te exigen estar. La diferencia entre las dos cosas es, literalmente, el plan de trabajo.">gap-analysis</span> contra Stord y Cubbo</p>
   <div class="tbl">
   <table>
-    <thead><tr><th>Dimensión</th><th>Amplifica hoy</th><th>Lo que pide Stord</th><th>Lo que pide Cubbo</th><th>Brecha</th></tr></thead>
+    <thead><tr><th>Dimensión</th><th>Amplifica hoy</th><th>Perfil que le encajaría a Stord (inferencia nuestra)</th><th>Perfil que le encajaría a Cubbo (inferencia nuestra)</th><th>Brecha</th></tr></thead>
     <tbody>
-      <tr><td>Geografía</td><td data-l="Hoy">Solo Santiago</td><td data-l="Stord">Multi-país</td><td data-l="Cubbo">México + Brasil + 1</td><td data-l="Brecha"><span class="pill p-red">Crítica</span></td></tr>
-      <tr><td>Tamaño</td><td data-l="Hoy"><span class="t" data-d="La etapa antes de la primera ronda institucional grande. Todavía estás probando que el modelo escala.">Pre-Serie A</span></td><td data-l="Stord">US$10–25M ingresos</td><td data-l="Cubbo">US$5–15M</td><td data-l="Brecha"><span class="pill p-red">Crítica</span></td></tr>
-      <tr><td><span class="t" data-d="Utilidad antes de intereses, impuestos, depreciación y amortización. En simple: cuánta plata genera la operación en sí misma, antes de contabilidad y financiamiento.">EBITDA</span></td><td data-l="Hoy">Cerca de cero</td><td data-l="Stord">Positivo, o entra vía <span class="t" data-d="Empresa en problemas que se vende barata y rápido. Stord ha comprado varias así.">distressed</span></td><td data-l="Cubbo">Menos exigente</td><td data-l="Brecha"><span class="pill p-amb">Alta</span></td></tr>
-      <tr><td>Software</td><td data-l="Hoy">Turbo interno, sin ARR</td><td data-l="Stord"><span class="t" data-d="Warehouse Management System y Order Management System. El software que controla la bodega y los pedidos. Turbo es exactamente esto.">WMS/OMS</span> propio, obligatorio</td><td data-l="Cubbo">Igual</td><td data-l="Brecha"><span class="pill p-amb">Media</span></td></tr>
-      <tr><td>Contratos</td><td data-l="Hoy">Transaccional</td><td data-l="Stord">70% a 24 meses</td><td data-l="Cubbo">Menos exigente</td><td data-l="Brecha"><span class="pill p-amb">Alta</span></td></tr>
-      <tr><td>Concentración</td><td data-l="Hoy">Por medir</td><td data-l="Stord">Bajo 25%</td><td data-l="Cubbo">Bajo 25%</td><td data-l="Brecha"><span class="pill p-amb">Verificar</span></td></tr>
-      <tr><td>Asset-light</td><td data-l="Hoy">Dark stores arrendados</td><td data-l="Stord">Cumple</td><td data-l="Cubbo">Cumple</td><td data-l="Brecha"><span class="pill p-ok">OK</span></td></tr>
+      <tr><td>Geografía</td><td data-l="Hoy">Solo Santiago</td><td data-l="Encajaría a Stord (inferencia)">Multi-país</td><td data-l="Encajaría a Cubbo (inferencia)">México + Brasil + 1</td><td data-l="Brecha"><span class="pill p-red">Crítica</span></td></tr>
+      <tr><td>Tamaño</td><td data-l="Hoy"><span class="t" data-d="La etapa antes de la primera ronda institucional grande. Todavía estás probando que el modelo escala.">Pre-Serie A</span></td><td data-l="Encajaría a Stord (inferencia)">US$10–25M ingresos</td><td data-l="Encajaría a Cubbo (inferencia)">US$5–15M</td><td data-l="Brecha"><span class="pill p-red">Crítica</span></td></tr>
+      <tr><td><span class="t" data-d="Utilidad antes de intereses, impuestos, depreciación y amortización. En simple: cuánta plata genera la operación en sí misma, antes de contabilidad y financiamiento.">EBITDA</span></td><td data-l="Hoy">Cerca de cero</td><td data-l="Encajaría a Stord (inferencia)">Positivo, o entra vía <span class="t" data-d="Empresa en problemas que se vende barata y rápido. Stord ha comprado varias así.">distressed</span></td><td data-l="Encajaría a Cubbo (inferencia)">Menos exigente</td><td data-l="Brecha"><span class="pill p-amb">Alta</span></td></tr>
+      <tr><td>Software</td><td data-l="Hoy">Turbo interno, sin ARR</td><td data-l="Encajaría a Stord (inferencia)"><span class="t" data-d="Warehouse Management System y Order Management System. El software que controla la bodega y los pedidos. Turbo es exactamente esto.">WMS/OMS</span> propio, obligatorio</td><td data-l="Encajaría a Cubbo (inferencia)">Igual</td><td data-l="Brecha"><span class="pill p-amb">Media</span></td></tr>
+      <tr><td>Contratos</td><td data-l="Hoy">Transaccional</td><td data-l="Encajaría a Stord (inferencia)">70% a 24 meses</td><td data-l="Encajaría a Cubbo (inferencia)">Menos exigente</td><td data-l="Brecha"><span class="pill p-amb">Alta</span></td></tr>
+      <tr><td>Concentración</td><td data-l="Hoy">Por medir</td><td data-l="Encajaría a Stord (inferencia)">Bajo 25%</td><td data-l="Encajaría a Cubbo (inferencia)">Bajo 25%</td><td data-l="Brecha"><span class="pill p-amb">Verificar</span></td></tr>
+      <tr><td>Asset-light</td><td data-l="Hoy">Dark stores arrendados</td><td data-l="Encajaría a Stord (inferencia)">Cumple</td><td data-l="Encajaría a Cubbo (inferencia)">Cumple</td><td data-l="Brecha"><span class="pill p-ok">OK</span></td></tr>
     </tbody>
   </table>
   </div>
@@ -319,13 +329,15 @@ a{color:var(--acc)}
     <h3>Fuentes de información</h3>
     <p><b>Aviso primero: ni Stord ni Cubbo publican criterios de adquisición.</b> Ninguna de las dos tiene un documento que diga "compramos empresas con X ingresos". Las dos columnas de arriba son mi inferencia, no una lista oficial. Las armé de tres fuentes distintas y el nivel de confianza no es el mismo en todas.</p>
     <ul>
-      <li><span class="tag t-ver">Verificado</span><b>Qué ha comprado Stord.</b> De ahí saco el perfil de empresa que les sirve. Ware2Go se lo compraron a UPS y sumó 12 centros de fulfillment. Shipwire se lo compraron a CEVA Logistics, cerró el 1 de enero de 2026 y sumó otros 12 nodos. También asumieron un centro de Quiet Logistics en Dallas. El patrón es claro: <b>compran huella física y nodos, no promesas</b>.</li>
+      <li><span class="tag t-ver">Verificado</span><b>Qué ha comprado Stord.</b> Ware2Go se lo compraron a UPS y sumó <b>21</b> centros. Shipwire se lo compraron a CEVA Logistics, cerró el 1 de enero de 2026 y sumó otros 12 nodos. También asumieron un centro de Quiet Logistics en Dallas, en un acuerdo con American Eagle mientras Quiet se desmantelaba: capacidad tomada sin pagar por la empresa.</li>
+      <li><span class="tag t-ver">Verificado</span><b>Pero Stord no escala comprando.</b> De sus cerca de 100 centros, <b>solo unos 20 son propios y unos 80 son de partners</b> corriendo su software. Eso cambia la conclusión obvia: el camino natural con Stord es <b>ser su partner en el Cono Sur, no ser comprados por ellos</b>. Y si somos partner, la pregunta incómoda es qué los llevaría a comprar algo que ya les sirve por contrato.</li>
       <li><span class="tag t-ver">Verificado</span><b>Cuánto pesa Stord.</b> Serie F de US$250M a valorización de US$3.000M en mayo de 2026. La Serie E anterior, de más de US$200M liderada por Strike Capital con deuda de First Citizens y ORIX USA, fue a US$1.500M: duplicaron valorización en doce meses.</li>
-      <li><span class="tag t-ver">Verificado</span><b>Dónde está Cubbo.</b> Semilla de US$4M liderada por SV Latam Capital y pre-Serie A liderada por Gerdau Next Ventures. Hoy opera en México, Brasil y Colombia.</li>
-      <li><span class="tag t-inf">Inferido</span><b>Los umbrales numéricos.</b> El 70% de ingresos contratados a 24 meses, la concentración bajo 25%, el rango de múltiplos y el requisito de EBITDA positivo <b>no salen de Stord ni de Cubbo</b>. Son los criterios estándar que usa la literatura de M&amp;A de 3PL: Capstone Partners y CT Acquisitions. Los apliqué a nuestro caso, pero son referencia de industria.</li>
+      <li><span class="tag t-ver">Verificado</span><b>Dónde está Cubbo.</b> Semilla de US$4M liderada por SV Latam Capital y pre-Serie A liderada por Gerdau Next Ventures, de monto no revelado. Hoy se describe operando en <b>México y Brasil</b>: Colombia salió de su huella. <b>Su última ronda conocida es de 2022</b>, hace cuatro años.</li>
+      <li><span class="tag t-inf">Inferido, y con una sola fuente</span><b>Los umbrales numéricos.</b> El 70% de ingresos contratados a 24 meses, la concentración bajo 25%, los rangos de múltiplos y el requisito de EBITDA positivo <b>no salen de Stord ni de Cubbo</b>. Vienen de <a href="https://ctacquisitions.com/how-to-sell-a-3pl-business/" target="_blank" rel="noopener">CT Acquisitions</a>, un advisor estadounidense: <b>es una sola fuente y su data es de EE.UU., no de Chile ni de LatAm</b>. No tenemos comparable local. Trátenlos como referencia gruesa, no como umbral.</li>
       <li><span class="tag t-inf">Inferido</span><b>Los rangos de ingresos por comprador.</b> Los estimé cruzando el tamaño de lo que cada uno ha comprado con su etapa de financiamiento. Es lo más débil de la tabla. Tratenlo como orden de magnitud.</li>
+      <li><span class="tag t-inf">Ojo con la banda</span><b>A nuestro tamaño puede que ni apliquen estos múltiplos.</b> Los rangos de arriba son para empresas que se valoran por EBITDA. Un operador de nuestro porte suele valorarse por <span class="t" data-d="Seller's Discretionary Earnings. La utilidad del dueño: EBITDA más el sueldo y los gastos del fundador. Se usa en empresas chicas, donde el dueño y la empresa no están del todo separados. Los múltiplos de SDE son más bajos que los de EBITDA.">SDE</span>, con múltiplos más bajos. Hay que confirmar en qué banda caemos antes de usar cualquier número de esta nota.</li>
     </ul>
-    <p><b>Lo incómodo que apareció mientras revisaba:</b> Cubbo anunció su entrada a Chile ya en 2022 y todavía no llega. Eso se puede leer de dos formas. Que el mercado chileno no les cuadra, o que van a entrar solos cuando les convenga en vez de comprarnos. La segunda es peor para nosotros y es la que no aparece en mi lectura del final.</p>
+    <p><b>Lo incómodo que apareció mientras revisaba:</b> Cubbo anunció su entrada a Chile en <b>septiembre de 2021</b> y todavía no llega. Cinco años. Peor: su producto nuevo es <b>Merchant of Record</b>, o sea vender en mercados nuevos <b>sin montar estructura local</b>. Si esa es su estrategia, puede que Chile ya no sea un país que necesiten comprar. Entrarían solos, sin nosotros.</p>
   </div>
 </section>
 
@@ -342,8 +354,8 @@ a{color:var(--acc)}
   <table>
     <thead><tr><th>Stord</th><th>Dato</th></tr></thead>
     <tbody>
-      <tr><td>Tamaño</td><td data-l="Dato">Serie F de US$250M a valorización de <b>US$3.000M</b> (mayo 2026), el doble que doce meses antes. Se acercan a US$1.000M de ingresos, con US$147M de <span class="t" data-d="Annual Recurring Revenue. Ingreso recurrente anual, lo que un cliente paga todos los años por suscripción. Es el ingreso que más valoran los compradores porque es predecible.">ARR</span>, y son rentables desde 2024. <a href="https://www.stord.com/newsroom/stord-raises-250m-series-f" target="_blank" rel="noopener">Stord</a> · <a href="https://getlatka.com/companies/stord" target="_blank" rel="noopener">GetLatka</a></td></tr>
-      <tr><td>Qué ha comprado</td><td data-l="Dato">Ware2Go, comprada a UPS, +12 centros (<a href="https://www.supplychain247.com/article/stord-buys-ware2go-from-ups-takes-aim-at-amazons-fast-shipping" target="_blank" rel="noopener">fuente</a>) · Shipwire, comprada a CEVA Logistics, cerró 1-ene-2026, +12 nodos (<a href="https://www.prnewswire.com/news-releases/stord-acquires-shipwire-from-ceva-logistics-extending-nationwide-and-global-coverage-302652820.html" target="_blank" rel="noopener">fuente</a>) · centro de Quiet Logistics en Dallas (<a href="https://www.stord.com/newsroom/stord-assumes-quiet-logistics-dallas-center" target="_blank" rel="noopener">fuente</a>)</td></tr>
+      <tr><td>Tamaño</td><td data-l="Dato">Serie F de US$250M a valorización de <b>US$3.000M</b> (mayo 2026), el doble que doce meses antes. Cerca de 100 centros de fulfillment en el mundo, más de 1.000 clientes y sobre US$15.000M de <span class="t" data-d="Gross Merchandise Value. El valor total de la mercadería que pasa por la plataforma. Ojo: no es el ingreso de Stord, es lo que venden sus clientes. El ingreso de Stord es la comisión sobre eso.">GMV</span> al año. Rentables desde 2024. <a href="https://www.stord.com/newsroom/stord-raises-250m-series-f" target="_blank" rel="noopener">Serie F</a> · <a href="https://www.stord.com/about" target="_blank" rel="noopener">About</a></td></tr>
+      <tr><td>Qué ha comprado</td><td data-l="Dato">Ware2Go, comprada a UPS el 19-may-2025: <b>+21 centros</b> y 2,5M de pies cuadrados, cuando Stord tenía 11 nodos (<a href="https://www.stord.com/newsroom/stord-acquires-ware2go-from-ups" target="_blank" rel="noopener">fuente</a>) · Shipwire, comprada a CEVA Logistics, cerró 1-ene-2026, +12 nodos (<a href="https://www.prnewswire.com/news-releases/stord-acquires-shipwire-from-ceva-logistics-extending-nationwide-and-global-coverage-302652820.html" target="_blank" rel="noopener">fuente</a>) · centro de Quiet Logistics en Dallas (<a href="https://www.stord.com/newsroom/stord-assumes-quiet-logistics-dallas-center" target="_blank" rel="noopener">fuente</a>) · antes: Fulfillment Works, ProPack y Pitney Bowes E-Commerce</td></tr>
       <tr><td>Tickets</td><td data-l="Dato">Desde menos de US$10M hasta plataformas grandes</td></tr>
       <tr><td>Su jugada</td><td data-l="Dato"><span class="t" data-d="Comprar operadores logísticos a 5–7x EBITDA y meterlos dentro de una empresa a la que el mercado valora sobre ventas. El spread entre las dos bases se lo queda el comprador, no el vendedor.">Arbitraje de valoración</span>: compra logística a 5–7x EBITDA y la mete bajo una valorización que el mercado calcula sobre ventas. <b>Ese spread se lo queda Stord, no nosotros</b></td></tr>
       <tr><td>Qué busca</td><td data-l="Dato">Red física + clientes <span class="t" data-d="Direct-to-consumer. Marca que le vende directo a la persona, sin pasar por retail. Casi todos nuestros clientes son DTC.">DTC</span> + capacidad en geografías nuevas</td></tr>
@@ -357,9 +369,9 @@ a{color:var(--acc)}
   <table>
     <thead><tr><th>Cubbo</th><th>Dato</th></tr></thead>
     <tbody>
-      <tr><td>Tamaño</td><td data-l="Dato">Opera en México, Brasil y Colombia. Semilla de US$4M con SV Latam Capital y pre-Serie A liderada por Gerdau Next Ventures (<a href="https://latamlist.com/e-commerce-fulfillment-platform-cubbo-closed-pre-series-a-round/" target="_blank" rel="noopener">fuente</a>)</td></tr>
+      <tr><td>Tamaño</td><td data-l="Dato">Opera en México y Brasil. Semilla de US$4M con SV Latam Capital y pre-Serie A liderada por Gerdau Next Ventures (<a href="https://latamlist.com/e-commerce-fulfillment-platform-cubbo-closed-pre-series-a-round/" target="_blank" rel="noopener">fuente</a>)</td></tr>
       <tr><td>Su jugada</td><td data-l="Dato">Ser el líder de fulfillment e-commerce de LatAm</td></tr>
-      <tr><td>Qué busca</td><td data-l="Dato">Cobertura en países que no tiene. Chile califica, pero ojo: lo anunciaron en 2022 y no han llegado</td></tr>
+      <tr><td>Qué busca</td><td data-l="Dato">Cobertura en países que no tiene. Chile calificaba, pero lo anunciaron en <b>septiembre de 2021</b> y en cinco años no han llegado. Con Merchant of Record pueden servir Chile sin montar nada acá</td></tr>
       <tr><td>Forma del deal</td><td data-l="Dato">Fusión. Se paga en acciones, no en cash</td></tr>
       <tr><td>Lo bueno</td><td data-l="Dato">Es alcanzable ahora, sin esperar 3 años</td></tr>
       <tr><td>Lo malo</td><td data-l="Dato">No es plata en el bolsillo. Es cambiar acciones chilenas por acciones regionales</td></tr>
@@ -370,7 +382,7 @@ a{color:var(--acc)}
 
 <section>
   <h2><span class="num">06</span>Glosario</h2>
-  <p class="sub">Todo lo que aparece subrayado, junto</p>
+  <p class="sub">Los términos subrayados del documento, más algunos que conviene tener a mano</p>
   <div class="gloss"><dl>
     <div class="row"><dt>3PL</dt><dd>Third-party logistics. El operador que guarda, empaca y despacha por otro. Es lo que hace Amplifica.</dd></div>
     <div class="row"><dt>Dark store</dt><dd>Bodega chica dentro de la ciudad, sin público. Existe solo para despachar rápido.</dd></div>
@@ -379,6 +391,7 @@ a{color:var(--acc)}
     <div class="row"><dt>Múltiplo de ventas</dt><dd>Precio dividido por los ingresos anuales, sin mirar la utilidad. Es la base que se usa en software y en empresas de alto crecimiento. <b>No es comparable con un múltiplo de EBITDA:</b> 10x ventas y 10x EBITDA pueden diferir en cinco o seis veces el precio.</dd></div>
     <div class="row"><dt>ARR</dt><dd>Annual Recurring Revenue. Ingreso recurrente anual, lo que un cliente paga todos los años por suscripción.</dd></div>
     <div class="row"><dt>Asset-light</dt><dd>Sin activos pesados propios. Arriendas las bodegas en vez de comprarlas. Vale más.</dd></div>
+    <div class="row"><dt>GMV</dt><dd>Gross Merchandise Value. El valor total de la mercadería que pasa por una plataforma. <b>No es el ingreso de la plataforma:</b> es lo que venden sus clientes. El ingreso es la comisión sobre eso.</dd></div>
     <div class="row"><dt>DTC</dt><dd>Direct-to-consumer. Marca que le vende directo a la persona, sin pasar por retail.</dd></div>
     <div class="row"><dt>WMS / OMS</dt><dd>Warehouse Management System y Order Management System. El software que controla bodega y pedidos. Turbo es esto.</dd></div>
     <div class="row"><dt>SaaS</dt><dd>Software as a Service. Software que se cobra por suscripción mensual o anual en vez de venderse una vez.</dd></div>
@@ -390,13 +403,17 @@ a{color:var(--acc)}
     <div class="row"><dt>Concentración de clientes</dt><dd>Qué porcentaje de los ingresos viene de un solo cliente. Mientras más alto, más riesgo ve el comprador.</dd></div>
     <div class="row"><dt>Due diligence</dt><dd>La auditoría que hace el comprador antes de cerrar. Ahí se caen muchos deals.</dd></div>
     <div class="row"><dt>Gap-analysis</dt><dd>Comparar dónde estás hoy contra dónde te exigen estar. La diferencia es el plan de trabajo.</dd></div>
-    <div class="row"><dt>Exit</dt><dd>La venta de la empresa. Cuando los socios convierten acciones en plata.</dd></div>
+    <div class="row"><dt>SDE</dt><dd>Seller’s Discretionary Earnings. La utilidad del dueño: EBITDA más el sueldo y los gastos del fundador. Se usa en empresas chicas y sus múltiplos son más bajos que los de EBITDA.</dd></div>
+<div class="row"><dt>Preferencia de liquidación</dt><dd>El orden en que se reparte la plata al vender. Los inversionistas con preferencia cobran primero; los fundadores reciben lo que sobra.</dd></div>
+<div class="row"><dt>Earn-out</dt><dd>Parte del precio condicionada a cumplir metas después de la venta. Si no se cumplen, no se paga.</dd></div>
+<div class="row"><dt>Merchant of Record</dt><dd>Vender en un país sin montar estructura local: otro figura como el vendedor legal y se hace cargo de impuestos y cobros.</dd></div>
+<div class="row"><dt>Exit</dt><dd>La venta de la empresa. Cuando los socios convierten acciones en plata.</dd></div>
     <div class="row"><dt>M&amp;A</dt><dd>Mergers and Acquisitions. Fusiones y adquisiciones, el mundo de comprar y vender empresas.</dd></div>
   </dl></div>
 </section>
 
 <footer>
-  <p>Fuentes: <a href="https://www.stord.com/newsroom" target="_blank" rel="noopener">Stord Newsroom</a>, <a href="https://www.prnewswire.com/news-releases/stord-acquires-shipwire-from-ceva-logistics-extending-nationwide-and-global-coverage-302652820.html" target="_blank" rel="noopener">PR Newswire</a>, <a href="https://www.freightwaves.com/news/stord-raises-250m-to-harness-ai-for-e-commerce-logistics" target="_blank" rel="noopener">FreightWaves</a>, <a href="https://www.supplychain247.com/article/stord-buys-ware2go-from-ups-takes-aim-at-amazons-fast-shipping" target="_blank" rel="noopener">Supply Chain 24/7</a>, <a href="https://latamlist.com/e-commerce-fulfillment-platform-cubbo-closed-pre-series-a-round/" target="_blank" rel="noopener">LatamList</a>, <a href="https://www.cubbo.com" target="_blank" rel="noopener">Cubbo</a>, Capstone Partners (Warehousing &amp; Fulfillment M&amp;A Update), CT Acquisitions (How to Sell a 3PL Company).</p>
+  <p>Fuentes: <a href="https://www.stord.com/newsroom" target="_blank" rel="noopener">Stord Newsroom</a>, <a href="https://www.prnewswire.com/news-releases/stord-acquires-shipwire-from-ceva-logistics-extending-nationwide-and-global-coverage-302652820.html" target="_blank" rel="noopener">PR Newswire</a>, <a href="https://www.stord.com/newsroom/stord-acquires-ware2go-from-ups" target="_blank" rel="noopener">Stord · Ware2Go</a>, <a href="https://ctacquisitions.com/how-to-sell-a-3pl-business/" target="_blank" rel="noopener">CT Acquisitions</a>, <a href="https://www.capstonepartners.com/insights/article-3pl-market-update/" target="_blank" rel="noopener">Capstone Partners</a>, <a href="https://latamlist.com/e-commerce-fulfillment-platform-cubbo-closed-pre-series-a-round/" target="_blank" rel="noopener">LatamList</a>, <a href="https://www.cubbo.com" target="_blank" rel="noopener">Cubbo</a>, Capstone Partners (Warehousing &amp; Fulfillment M&amp;A Update), CT Acquisitions (How to Sell a 3PL Company).</p>
   <p>Documento interno de trabajo. Las cifras de terceros son públicas y están linkeadas. Los umbrales de exigencia atribuidos a Stord y Cubbo son inferencia mía, no criterios publicados por ellos: ver "Fuentes de información" en la sección 04.</p>
 </footer>
 
