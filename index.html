@@ -222,38 +222,55 @@ a{color:var(--acc)}
   <p class="sub">No todos compran lo mismo ni pagan igual</p>
   <div class="tbl">
   <table>
-    <thead><tr><th>Tipo</th><th>Quiénes son</th><th>Qué compran</th><th>Múltiplo</th><th>Cuándo</th></tr></thead>
+    <thead><tr><th>Tipo</th><th>Quiénes son</th><th>Qué compran</th><th>Lo que nos pagarían a nosotros</th><th>Sobre qué base se valoran ellos</th><th>Cuándo</th></tr></thead>
     <tbody>
       <tr>
         <td>Consolidador tech</td>
         <td data-l="Quiénes">Stord, Cart.com, ShipBob</td>
         <td data-l="Qué compran">Plataforma completa: red física + clientes + software</td>
-        <td data-l="Múltiplo" class="num-c"><span class="t" data-d="Precio de venta = EBITDA × múltiplo. Si la empresa genera 1 millón al año y te pagan 10x, vale 10 millones. El múltiplo lo define qué tan buena se ve la empresa, no cuánto gana.">9–12x</span></td>
+        <td data-l="Nos pagarían">6–7x <span class="t" data-d="Enterprise Value dividido por EBITDA. La base estándar para valorar operadores logísticos: se mide contra la utilidad operativa, no contra las ventas.">EV/EBITDA</span> si llegamos asset-light y contratados</td>
+        <td data-l="Se valoran ellos"><span class="t" data-d="Precio dividido por los ingresos anuales, sin mirar la utilidad. Es la base que se usa en software y en empresas de alto crecimiento, porque muchas todavía no tienen utilidad que dividir.">Múltiplo de ventas</span>. Stord: US$3.000M sobre ~US$1.000M de ingresos ≈ 3x</td>
         <td data-l="Cuándo"><span class="pill p-red">3–5 años</span></td>
       </tr>
       <tr>
         <td>Logística global</td>
         <td data-l="Quiénes">DHL Supply Chain, GXO, Kuehne+Nagel, Maersk</td>
         <td data-l="Qué compran">Capacidad y geografía. No compran visión</td>
-        <td data-l="Múltiplo" class="num-c">5–7x</td>
+        <td data-l="Nos pagarían">5–7x EV/EBITDA</td>
+        <td data-l="Se valoran ellos">EBITDA. Cotizan en bolsa, misma base con la que compran</td>
         <td data-l="Cuándo"><span class="pill p-red">5+ años</span></td>
       </tr>
       <tr>
         <td>Regional LatAm</td>
         <td data-l="Quiénes">Cubbo, Melonn, Skydropx, Chazki</td>
         <td data-l="Qué compran">El país que les falta. Es fusión más que venta</td>
-        <td data-l="Múltiplo" class="num-c">Se paga en acciones</td>
+        <td data-l="Nos pagarían">Se paga en acciones. No hay múltiplo de EBITDA, se negocia participación relativa</td>
+        <td data-l="Se valoran ellos">Ventas o ARR, lógica de capital de riesgo</td>
         <td data-l="Cuándo"><span class="pill p-ok">12–24 meses</span></td>
       </tr>
       <tr>
         <td>Local / fondos</td>
         <td data-l="Quiénes">Blue Express, Falabella, Cencosud, Bsale, Defontana</td>
         <td data-l="Qué compran">Sinergia con lo que ya tienen</td>
-        <td data-l="Múltiplo" class="num-c">Bajo</td>
+        <td data-l="Nos pagarían">4–5x EV/EBITDA mientras sigamos transaccionales</td>
+        <td data-l="Se valoran ellos">EBITDA</td>
         <td data-l="Cuándo"><span class="pill p-amb">Lo más probable hoy</span></td>
       </tr>
     </tbody>
   </table>
+  </div>
+
+  <div class="src">
+    <h3>Fuentes y por qué hay dos columnas de múltiplo</h3>
+    <p><b>La trampa que casi se nos va.</b> En logística el múltiplo estándar es sobre EBITDA. En software es sobre ventas. Son bases distintas y no se pueden comparar: un 10x de EBITDA y un 10x de ventas pueden diferir en cinco o seis veces el precio. Una versión anterior de esta tabla ponía "9–12x" para el consolidador tech como si fuera EBITDA, y eso <b>se sale por arriba del rango de todo el rubro</b>, que va de 3x a 11x.</p>
+    <p><b>Y lo más importante: el múltiplo del comprador no es lo que el comprador paga.</b> Stord vale ~3x sus ventas, pero compra operadores a 5–7x EBITDA como todo el mundo. La diferencia entre esas dos cosas es su negocio, no el nuestro. Si en la mesa alguien dice "Stord se valora a 10x, entonces a nosotros nos pagan 10x", ahí está el error.</p>
+    <ul>
+      <li><span class="tag t-ver">Verificado</span><b>Rangos de EBITDA del rubro.</b> 3PL de fulfillment entre 3x y 11x. Transaccional sin contratos 4–5x. Con 70% de ingresos contratados a 24 meses 6–7x. Asset-light 6–7,5x. Fuente: <a href="https://ctacquisitions.com/how-to-sell-a-3pl-business/" target="_blank" rel="noopener">CT Acquisitions</a> y <a href="https://www.capstonepartners.com/insights/article-3pl-market-update/" target="_blank" rel="noopener">Capstone Partners</a>.</li>
+      <li><span class="tag t-ver">Verificado</span><b>Stord.</b> Serie F de US$250M a valorización de US$3.000M en mayo de 2026, el doble de los US$1.500M de doce meses antes. Se acercan a US$1.000M de ingresos, con US$147M de ARR, y son rentables desde 2024. Fuente: <a href="https://www.stord.com/newsroom/stord-raises-250m-series-f" target="_blank" rel="noopener">Stord Newsroom</a> y <a href="https://getlatka.com/companies/stord" target="_blank" rel="noopener">GetLatka</a>.</li>
+      <li><span class="tag t-inf">Inferido</span><b>La columna "lo que nos pagarían".</b> No es una oferta ni una conversación con nadie. Es el rango del rubro aplicado a nuestro perfil según qué tan contratados y asset-light lleguemos. Es una referencia, no un precio.</li>
+      <li><span class="tag t-inf">Inferido</span><b>La base de valorización de los regionales.</b> Cubbo, Melonn y Skydropx son privadas y no publican ingresos ni valorización. Que se valoren sobre ventas se deduce de su etapa de financiamiento, no de cifras suyas.</li>
+    </ul>
+    <p>Para que quede en números nuestros: a US$10M de ingresos con 8% de margen son US$800 mil de EBITDA. A 4–5x eso son US$3,2–4M. A 6–7x son US$4,8–5,6M. <b>Casi todo el trabajo de los próximos dos años es mover ese múltiplo, no solo crecer las ventas.</b></p>
   </div>
 </section>
 
@@ -303,7 +320,7 @@ a{color:var(--acc)}
     <p><b>Aviso primero: ni Stord ni Cubbo publican criterios de adquisición.</b> Ninguna de las dos tiene un documento que diga "compramos empresas con X ingresos". Las dos columnas de arriba son mi inferencia, no una lista oficial. Las armé de tres fuentes distintas y el nivel de confianza no es el mismo en todas.</p>
     <ul>
       <li><span class="tag t-ver">Verificado</span><b>Qué ha comprado Stord.</b> De ahí saco el perfil de empresa que les sirve. Ware2Go se lo compraron a UPS y sumó 12 centros de fulfillment. Shipwire se lo compraron a CEVA Logistics, cerró el 1 de enero de 2026 y sumó otros 12 nodos. También asumieron un centro de Quiet Logistics en Dallas. El patrón es claro: <b>compran huella física y nodos, no promesas</b>.</li>
-      <li><span class="tag t-ver">Verificado</span><b>Cuánto pesa Stord.</b> Serie E de más de US$200M liderada por Strike Capital, con deuda de crecimiento de First Citizens y ORIX USA, a una valorización de US$1.500M.</li>
+      <li><span class="tag t-ver">Verificado</span><b>Cuánto pesa Stord.</b> Serie F de US$250M a valorización de US$3.000M en mayo de 2026. La Serie E anterior, de más de US$200M liderada por Strike Capital con deuda de First Citizens y ORIX USA, fue a US$1.500M: duplicaron valorización en doce meses.</li>
       <li><span class="tag t-ver">Verificado</span><b>Dónde está Cubbo.</b> Semilla de US$4M liderada por SV Latam Capital y pre-Serie A liderada por Gerdau Next Ventures. Hoy opera en México, Brasil y Colombia.</li>
       <li><span class="tag t-inf">Inferido</span><b>Los umbrales numéricos.</b> El 70% de ingresos contratados a 24 meses, la concentración bajo 25%, el rango de múltiplos y el requisito de EBITDA positivo <b>no salen de Stord ni de Cubbo</b>. Son los criterios estándar que usa la literatura de M&amp;A de 3PL: Capstone Partners y CT Acquisitions. Los apliqué a nuestro caso, pero son referencia de industria.</li>
       <li><span class="tag t-inf">Inferido</span><b>Los rangos de ingresos por comprador.</b> Los estimé cruzando el tamaño de lo que cada uno ha comprado con su etapa de financiamiento. Es lo más débil de la tabla. Tratenlo como orden de magnitud.</li>
@@ -325,10 +342,10 @@ a{color:var(--acc)}
   <table>
     <thead><tr><th>Stord</th><th>Dato</th></tr></thead>
     <tbody>
-      <tr><td>Tamaño</td><td data-l="Dato">Serie E de más de US$200M liderada por Strike Capital, a valorización de US$1.500M. <a href="https://www.freightwaves.com/news/stord-raises-250m-to-harness-ai-for-e-commerce-logistics" target="_blank" rel="noopener">FreightWaves</a></td></tr>
+      <tr><td>Tamaño</td><td data-l="Dato">Serie F de US$250M a valorización de <b>US$3.000M</b> (mayo 2026), el doble que doce meses antes. Se acercan a US$1.000M de ingresos, con US$147M de <span class="t" data-d="Annual Recurring Revenue. Ingreso recurrente anual, lo que un cliente paga todos los años por suscripción. Es el ingreso que más valoran los compradores porque es predecible.">ARR</span>, y son rentables desde 2024. <a href="https://www.stord.com/newsroom/stord-raises-250m-series-f" target="_blank" rel="noopener">Stord</a> · <a href="https://getlatka.com/companies/stord" target="_blank" rel="noopener">GetLatka</a></td></tr>
       <tr><td>Qué ha comprado</td><td data-l="Dato">Ware2Go, comprada a UPS, +12 centros (<a href="https://www.supplychain247.com/article/stord-buys-ware2go-from-ups-takes-aim-at-amazons-fast-shipping" target="_blank" rel="noopener">fuente</a>) · Shipwire, comprada a CEVA Logistics, cerró 1-ene-2026, +12 nodos (<a href="https://www.prnewswire.com/news-releases/stord-acquires-shipwire-from-ceva-logistics-extending-nationwide-and-global-coverage-302652820.html" target="_blank" rel="noopener">fuente</a>) · centro de Quiet Logistics en Dallas (<a href="https://www.stord.com/newsroom/stord-assumes-quiet-logistics-dallas-center" target="_blank" rel="noopener">fuente</a>)</td></tr>
       <tr><td>Tickets</td><td data-l="Dato">Desde menos de US$10M hasta plataformas grandes</td></tr>
-      <tr><td>Su jugada</td><td data-l="Dato"><span class="t" data-d="Comprar barato algo que el mercado valora a 3–5x, meterlo dentro de una empresa que el mercado valora a 10x, y que valga 10x de inmediato. Funciona mientras sigan levantando capital.">Arbitraje de valoración</span>: compra logística a 3–5x y la mete bajo su múltiplo tech de 10x</td></tr>
+      <tr><td>Su jugada</td><td data-l="Dato"><span class="t" data-d="Comprar operadores logísticos a 5–7x EBITDA y meterlos dentro de una empresa a la que el mercado valora sobre ventas. El spread entre las dos bases se lo queda el comprador, no el vendedor.">Arbitraje de valoración</span>: compra logística a 5–7x EBITDA y la mete bajo una valorización que el mercado calcula sobre ventas. <b>Ese spread se lo queda Stord, no nosotros</b></td></tr>
       <tr><td>Qué busca</td><td data-l="Dato">Red física + clientes <span class="t" data-d="Direct-to-consumer. Marca que le vende directo a la persona, sin pasar por retail. Casi todos nuestros clientes son DTC.">DTC</span> + capacidad en geografías nuevas</td></tr>
       <tr><td>El riesgo</td><td data-l="Dato">Depende de seguir levantando plata. Si el mercado se enfría, el M&amp;A se congela</td></tr>
       <tr><td>Cómo entrarles</td><td data-l="Dato">Ser su nodo del Cono Sur. Hay que llegar con clientes internacionales que ya quieren vender en Chile</td></tr>
@@ -358,7 +375,8 @@ a{color:var(--acc)}
     <div class="row"><dt>3PL</dt><dd>Third-party logistics. El operador que guarda, empaca y despacha por otro. Es lo que hace Amplifica.</dd></div>
     <div class="row"><dt>Dark store</dt><dd>Bodega chica dentro de la ciudad, sin público. Existe solo para despachar rápido.</dd></div>
     <div class="row"><dt>EBITDA</dt><dd>Utilidad antes de intereses, impuestos, depreciación y amortización. En simple: cuánta plata genera la operación en sí misma.</dd></div>
-    <div class="row"><dt>Múltiplo EBITDA</dt><dd>Precio de venta = EBITDA × múltiplo. Si generas 1 millón y te pagan 7x, la empresa vale 7 millones.</dd></div>
+    <div class="row"><dt>Múltiplo EBITDA (EV/EBITDA)</dt><dd>Precio de venta = EBITDA × múltiplo. Si generas 1 millón y te pagan 7x, la empresa vale 7 millones. Es la base estándar en logística.</dd></div>
+    <div class="row"><dt>Múltiplo de ventas</dt><dd>Precio dividido por los ingresos anuales, sin mirar la utilidad. Es la base que se usa en software y en empresas de alto crecimiento. <b>No es comparable con un múltiplo de EBITDA:</b> 10x ventas y 10x EBITDA pueden diferir en cinco o seis veces el precio.</dd></div>
     <div class="row"><dt>ARR</dt><dd>Annual Recurring Revenue. Ingreso recurrente anual, lo que un cliente paga todos los años por suscripción.</dd></div>
     <div class="row"><dt>Asset-light</dt><dd>Sin activos pesados propios. Arriendas las bodegas en vez de comprarlas. Vale más.</dd></div>
     <div class="row"><dt>DTC</dt><dd>Direct-to-consumer. Marca que le vende directo a la persona, sin pasar por retail.</dd></div>
@@ -368,7 +386,7 @@ a{color:var(--acc)}
     <div class="row"><dt>Consolidador</dt><dd>Empresa que crece comprando competidores más chicos para armar una sola plataforma grande.</dd></div>
     <div class="row"><dt>Bolt-on</dt><dd>Compra chica que se enchufa a una plataforma que ya existe, para sumarle capacidad o geografía.</dd></div>
     <div class="row"><dt>Distressed</dt><dd>Empresa en problemas que se vende barata y rápido.</dd></div>
-    <div class="row"><dt>Arbitraje de valoración</dt><dd>Comprar barato algo que vale 3–5x, meterlo dentro de una empresa valorada a 10x, y que valga 10x altiro.</dd></div>
+    <div class="row"><dt>Arbitraje de valoración</dt><dd>Comprar operadores a múltiplo de EBITDA y meterlos dentro de una empresa que el mercado valora sobre ventas. El spread entre las dos bases se lo queda el comprador.</dd></div>
     <div class="row"><dt>Concentración de clientes</dt><dd>Qué porcentaje de los ingresos viene de un solo cliente. Mientras más alto, más riesgo ve el comprador.</dd></div>
     <div class="row"><dt>Due diligence</dt><dd>La auditoría que hace el comprador antes de cerrar. Ahí se caen muchos deals.</dd></div>
     <div class="row"><dt>Gap-analysis</dt><dd>Comparar dónde estás hoy contra dónde te exigen estar. La diferencia es el plan de trabajo.</dd></div>
