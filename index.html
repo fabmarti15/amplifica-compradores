@@ -3,502 +3,99 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Amplifica · Quién nos podría comprar</title>
-<meta name="description" content="Mapa de potenciales compradores de Amplifica y qué hay que construir para llegar ahí.">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Amplifica · Documento protegido</title>
 <style>
-:root{
-  --ink:#14171a;
-  --ink-2:#4a545e;
-  --ink-3:#7c8894;
-  --bg:#fbfaf7;
-  --card:#ffffff;
-  --line:#e6e2da;
-  --line-2:#f0ede7;
-  --acc:#0f6b5c;
-  --acc-soft:#e6f2ef;
-  --warn:#a8412a;
-  --warn-soft:#fbeee9;
-  --radius:14px;
-}
+:root{--ink:#14171a;--ink-2:#4a545e;--ink-3:#7c8894;--bg:#fbfaf7;--card:#fff;--line:#e6e2da;--acc:#0f6b5c;--warn:#a8412a}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font:400 17px/1.62 ui-sans-serif,-apple-system,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
-  letter-spacing:-0.011em;
-  padding:0 0 5rem;
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{max-width:760px;margin:0 auto;padding:0 20px}
-
-/* ---------- header ---------- */
-header{padding:56px 0 24px}
-.kicker{
-  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--acc);font-weight:650;margin:0 0 14px
-}
-h1{
-  font-size:clamp(30px,7.5vw,44px);line-height:1.1;letter-spacing:-0.032em;
-  font-weight:680;margin:0
-}
-.lede{font-size:18px;color:var(--ink-2);margin:0}
-.lede b{color:var(--ink);font-weight:600}
-.meta{
-  margin-top:26px;padding-top:18px;border-top:1px solid var(--line);
-  font-size:14px;color:var(--ink-3);display:flex;gap:16px;flex-wrap:wrap
-}
-
-/* ---------- intro note ---------- */
-.note{
-  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  padding:22px 22px 20px;margin:8px 0 40px;
-}
-.note p{margin:0 0 2px;line-height:1.5}
-.note p.gap{margin-bottom:14px}
-.note .sign{color:var(--ink-3);margin-top:14px}
-
-/* ---------- sections ---------- */
-section{margin:0 0 46px;scroll-margin-top:20px}
-h2{
-  font-size:clamp(21px,5vw,26px);line-height:1.22;letter-spacing:-0.024em;
-  font-weight:670;margin:0 0 6px
-}
-h2 .num{color:var(--acc);font-variant-numeric:tabular-nums;margin-right:10px;font-weight:600}
-.sub{color:var(--ink-3);font-size:15px;margin:0 0 20px}
-p{margin:0 0 12px}
-.lines p{margin:0 0 1px;line-height:1.5}
-.lines p.gap{margin-bottom:14px}
-
-/* ---------- lists ---------- */
-ul{margin:0 0 16px;padding:0;list-style:none}
-li{
-  position:relative;padding:0 0 0 22px;margin:0 0 10px;line-height:1.5
-}
-li:before{
-  content:"";position:absolute;left:2px;top:.66em;
-  width:6px;height:6px;border-radius:50%;background:var(--acc)
-}
-ul.bad li:before{background:var(--warn)}
-
-/* ---------- tables ---------- */
-.tbl{
-  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  overflow:hidden;margin:0 0 18px
-}
-table{width:100%;border-collapse:collapse;font-size:15.5px}
-th{
-  text-align:left;font-weight:620;font-size:12px;letter-spacing:.07em;text-transform:uppercase;
-  color:var(--ink-3);padding:13px 16px;border-bottom:1px solid var(--line);
-  background:#faf8f4;vertical-align:bottom
-}
-td{padding:13px 16px;border-bottom:1px solid var(--line-2);vertical-align:top;line-height:1.42}
-tr:last-child td{border-bottom:0}
-td:first-child{font-weight:600}
-.num-c{font-variant-numeric:tabular-nums;white-space:nowrap}
-.pill{
-  display:inline-block;padding:2px 9px;border-radius:999px;font-size:12.5px;
-  font-weight:600;white-space:nowrap;line-height:1.5
-}
-.p-red{background:var(--warn-soft);color:var(--warn)}
-.p-amb{background:#fdf3e2;color:#8a5a10}
-.p-ok{background:var(--acc-soft);color:var(--acc)}
-
-/* mobile: tables become cards */
-@media (max-width:620px){
-  .tbl{border:0;background:transparent;border-radius:0}
-  table,tbody,tr,td{display:block;width:100%}
-  thead{display:none}
-  tr{
-    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-    padding:6px 2px;margin:0 0 12px
-  }
-  td{
-    border-bottom:1px solid var(--line-2);padding:11px 16px 13px;line-height:1.45
-  }
-  td:last-child{border-bottom:0}
-  td:before{
-    content:attr(data-l);display:block;
-    font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-    color:var(--ink-3);font-weight:650;line-height:1.4;margin-bottom:3px
-  }
-  td:first-child{
-    font-size:17.5px;font-weight:660;letter-spacing:-.02em;
-    background:#faf8f4;border-radius:10px 10px 0 0;
-    padding-top:13px;padding-bottom:12px
-  }
-  td:first-child:before{display:none}
-}
-
-/* ---------- tooltip term ---------- */
-.t{
-  color:var(--acc);font-weight:560;cursor:pointer;
-  border-bottom:1.5px dotted var(--acc);
-  padding-bottom:.5px;
-  -webkit-tap-highlight-color:transparent;
-  touch-action:manipulation;
-}
-.t:active,.t.on{background:var(--acc-soft);border-radius:3px}
-
-#pop{
-  position:fixed;z-index:60;max-width:330px;width:calc(100vw - 32px);
-  background:#1b1f23;color:#f3f1ec;border-radius:12px;padding:14px 16px;
-  font-size:15px;line-height:1.48;
-  box-shadow:0 12px 40px rgba(0,0,0,.28),0 2px 8px rgba(0,0,0,.16);
-  opacity:0;transform:translateY(6px) scale(.98);pointer-events:none;
-  transition:opacity .15s ease,transform .15s ease;
-}
-#pop.show{opacity:1;transform:none;pointer-events:auto}
-#pop .term{
-  display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
-  color:#8fd6c6;font-weight:650;margin-bottom:6px
-}
-#pop:after{
-  content:"";position:absolute;width:12px;height:12px;background:#1b1f23;
-  transform:rotate(45deg);
-}
-#pop.below:after{top:-5px}
-#pop.above:after{bottom:-5px}
-
-/* ---------- source note ---------- */
-.src{
-  background:#faf8f4;border:1px solid var(--line);border-radius:var(--radius);
-  padding:20px 22px;margin:0 0 18px;font-size:15.5px;line-height:1.55
-}
-.src h3{
-  font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--acc);
-  font-weight:650;margin:0 0 12px
-}
-.src p{margin:0 0 12px;color:var(--ink-2)}
-.src p:last-child{margin-bottom:0}
-.src p b{color:var(--ink)}
-.src ul{margin:0 0 14px}
-.src li{margin:0 0 9px;color:var(--ink-2)}
-.src li b{color:var(--ink)}
-.src li:before{width:5px;height:5px;top:.7em;background:var(--ink-3)}
-.tag{
-  display:inline-block;padding:1px 8px;border-radius:999px;font-size:11.5px;
-  font-weight:650;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;
-  vertical-align:1.5px;margin-right:6px
-}
-.t-ver{background:var(--acc-soft);color:var(--acc)}
-.t-inf{background:#fdf3e2;color:#8a5a10}
-.who{margin:0 0 0;font-size:15.5px}
-.who p{margin:0 0 10px;color:var(--ink-2)}
-.who p:last-child{margin-bottom:0}
-
-/* ---------- glossary ---------- */
-.gloss{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
-.gloss .row{padding:15px 18px;border-bottom:1px solid var(--line-2)}
-.gloss .row:last-child{border-bottom:0}
-.gloss dt{font-weight:640;font-size:16px;margin:0 0 3px;letter-spacing:-.015em}
-.gloss dd{margin:0;color:var(--ink-2);font-size:15.5px;line-height:1.48}
-dl{margin:0}
-
-footer{
-  margin-top:52px;padding-top:22px;border-top:1px solid var(--line);
-  font-size:13.5px;color:var(--ink-3);line-height:1.6
-}
-footer a{color:var(--ink-3)}
-a{color:var(--acc)}
-
-.hr{height:1px;background:var(--line);margin:0 0 42px;border:0}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:400 17px/1.62 ui-sans-serif,-apple-system,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+letter-spacing:-.011em;-webkit-font-smoothing:antialiased}
+#puerta{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.caja{background:var(--card);border:1px solid var(--line);border-radius:14px;
+padding:30px 26px;max-width:400px;width:100%;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.caja .kick{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);font-weight:650;margin:0 0 12px}
+.caja h1{font-size:23px;line-height:1.25;letter-spacing:-.024em;font-weight:670;margin:0 0 8px}
+.caja p{color:var(--ink-2);font-size:15.5px;margin:0 0 20px}
+label{display:block;font-size:12px;letter-spacing:.07em;text-transform:uppercase;
+color:var(--ink-3);font-weight:650;margin:0 0 7px}
+input{width:100%;padding:13px 14px;font-size:17px;border:1px solid var(--line);
+border-radius:10px;background:#fbfaf7;color:var(--ink);font-family:inherit}
+input:focus{outline:none;border-color:var(--acc);background:#fff}
+button{width:100%;margin-top:12px;padding:13px;font-size:16px;font-weight:600;font-family:inherit;
+color:#fff;background:var(--acc);border:0;border-radius:10px;cursor:pointer}
+button:disabled{opacity:.55;cursor:default}
+#msg{margin:14px 0 0;font-size:14.5px;color:var(--warn);min-height:20px}
+#listo{display:none}
 </style>
 </head>
 <body>
 
-<div class="wrap">
-
-<header>
-  <p class="kicker">Amplifica · Nota de directorio</p>
-  <h1>Quién nos podría comprar algún día</h1>
-</header>
-
-<hr class="hr">
-
-<section>
-  <h2><span class="num">01</span>Los tipos de comprador</h2>
-  <p class="sub">No todos compran lo mismo ni pagan igual</p>
-  <div class="tbl">
-  <table>
-    <thead><tr><th>Tipo</th><th>Quiénes son</th><th>Qué compran</th><th>Lo que nos pagarían a nosotros</th><th>Sobre qué base se valoran ellos</th><th>Cuándo</th></tr></thead>
-    <tbody>
-      <tr>
-        <td>Consolidador tech</td>
-        <td data-l="Quiénes">Stord, Cart.com, ShipBob</td>
-        <td data-l="Qué compran">Plataforma completa: red física + clientes + software</td>
-        <td data-l="Nos pagarían">6–7x <span class="t" data-d="Enterprise Value dividido por EBITDA. La base estándar para valorar operadores logísticos: se mide contra la utilidad operativa, no contra las ventas.">EV/EBITDA</span> si llegamos asset-light y contratados</td>
-        <td data-l="Se valoran ellos"><span class="t" data-d="Precio dividido por los ingresos anuales, sin mirar la utilidad. Es la base que se usa en software y en empresas de alto crecimiento, porque muchas todavía no tienen utilidad que dividir.">Múltiplo de ventas</span>. Stord vale US$3.000M y su CEO declaró que llegarían a casi US$1.000M de ingresos este año: ~3x ventas</td>
-        <td data-l="Cuándo"><span class="pill p-red">3–5 años</span></td>
-      </tr>
-      <tr>
-        <td>Logística global</td>
-        <td data-l="Quiénes">DHL Supply Chain, GXO, Kuehne+Nagel, Maersk</td>
-        <td data-l="Qué compran">Capacidad y geografía. No compran visión</td>
-        <td data-l="Nos pagarían">5–7x EV/EBITDA</td>
-        <td data-l="Se valoran ellos">EBITDA. Cotizan en bolsa, misma base con la que compran</td>
-        <td data-l="Cuándo"><span class="pill p-red">5+ años</span></td>
-      </tr>
-      <tr>
-        <td>Regional LatAm</td>
-        <td data-l="Quiénes">Cubbo, Melonn, Skydropx. <b>Chazki no cuenta: ya opera en Chile</b> y además es última milla, no fulfillment</td>
-        <td data-l="Qué compran">El país que les falta. Es fusión más que venta</td>
-        <td data-l="Nos pagarían">Se paga en acciones. No hay múltiplo de EBITDA, se negocia participación relativa</td>
-        <td data-l="Se valoran ellos">Ventas o ARR, lógica de capital de riesgo. <b>Ninguno ha levantado desde 2022</b>: sus acciones son ilíquidas y con marca de hace cuatro años</td>
-        <td data-l="Cuándo"><span class="pill p-amb">12–24 meses, pero sin caja</span></td>
-      </tr>
-      <tr>
-        <td>Gigante del e-commerce</td>
-        <td data-l="Quiénes">Mercado Libre</td>
-        <td data-l="Qué compran">Nada, por ahora: lo construyen. <b>Es más amenaza que comprador</b></td>
-        <td data-l="Nos pagarían">Sin precedente de compra de 3PL en Chile</td>
-        <td data-l="Se valoran ellos">Empresa pública, ventas y EBITDA</td>
-        <td data-l="Cuándo"><span class="pill p-red">Riesgo, no salida</span></td>
-      </tr>
-      <tr>
-        <td>Local / fondos</td>
-        <td data-l="Quiénes">Blue Express (<b>de Copec desde 2023</b>), Falabella, Cencosud, Bsale, Defontana</td>
-        <td data-l="Qué compran">Sinergia con lo que ya tienen</td>
-        <td data-l="Nos pagarían">4–5x EV/EBITDA mientras sigamos transaccionales</td>
-        <td data-l="Se valoran ellos">EBITDA</td>
-        <td data-l="Cuándo"><span class="pill p-amb">Lo más probable hoy</span></td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
-
-  <div class="src">
-    <h3>Fuentes y por qué hay dos columnas de múltiplo</h3>
-    <p><b>Son dos bases distintas y no se pueden comparar.</b> En logística el múltiplo se calcula sobre EBITDA. En software, sobre ventas. Un 10x de EBITDA y un 10x de ventas pueden diferir en cinco o seis veces el precio, así que meterlos en una sola columna induce a error.</p>
-    <p><b>Y lo más importante: el múltiplo del comprador no es lo que el comprador paga.</b> Stord se valora sobre ventas, pero a los operadores que compra los paga sobre EBITDA. La diferencia entre esas dos cosas es su negocio, no el nuestro. Si en la mesa alguien dice "Stord se valora a 10x, entonces a nosotros nos pagan 10x", ahí está el error. Aclaración: <b>Stord nunca ha revelado el precio de ninguna de sus ocho adquisiciones</b>, así que lo que pagaría por nosotros es estimación de industria, no dato.</p>
-    <ul>
-      <li><span class="tag t-inf">Una sola fuente, y es de EE.UU.</span><b>Rangos de EBITDA del rubro.</b> Transaccional sin contratos 4–5x. Con 70% de ingresos contratados a 24 meses 6–7x. Asset-light 6–7,5x. Todo esto viene de <a href="https://ctacquisitions.com/how-to-sell-a-3pl-business/" target="_blank" rel="noopener">CT Acquisitions</a>, un advisor estadounidense, y <b>su data es del mercado gringo</b>. No tenemos comparable chileno ni latinoamericano. Además esos rangos aplican a empresas que se valoran por EBITDA: a nuestro tamaño puede que apliquen múltiplos de <span class="t" data-d="Seller's Discretionary Earnings. La utilidad del dueño: EBITDA más el sueldo y los gastos del fundador. Se usa en empresas chicas y sus múltiplos son más bajos que los de EBITDA.">SDE</span>, que son más bajos. Hay que confirmarlo antes de usar cualquiera de estos números.</li>
-      <li><span class="tag t-ver">Verificado</span><b>Stord.</b> Serie F de US$250M a valorización de US$3.000M en mayo de 2026, el doble de los US$1.500M de doce meses antes. Cerca de 100 centros de fulfillment, más de 1.000 clientes, sobre US$15.000M de GMV al año y rentables desde 2024. Fuente: <a href="https://www.stord.com/newsroom/stord-raises-250m-series-f" target="_blank" rel="noopener">Stord Newsroom</a> y <a href="https://www.stord.com/about" target="_blank" rel="noopener">Stord About</a>.</li>
-      <li><span class="tag t-ver">Verificado</span><b>El "~3x ventas" de Stord.</b> Su CEO, Sean Henry, declaró en mayo de 2026 que harían casi US$1.000M de ingresos en el año. Ojo con no confundirlo: los US$15.000M que también publican son <b>GMV</b>, o sea lo que venden sus clientes, no lo que factura Stord. La diferencia es 15 veces.</li>
-      <li><span class="tag t-inf">Inferido</span><b>La columna "lo que nos pagarían".</b> No es una oferta ni una conversación con nadie. Es el rango del rubro aplicado a nuestro perfil según qué tan contratados y asset-light lleguemos. Es una referencia, no un precio.</li>
-      <li><span class="tag t-inf">Inferido</span><b>La base de valorización de los regionales.</b> Cubbo, Melonn y Skydropx son privadas y no publican ingresos ni valorización. Que se valoren sobre ventas se deduce de su etapa de financiamiento, no de cifras suyas.</li>
-    </ul>
-    <p><b>Casi todo el trabajo de los próximos dos años es mover el múltiplo, no solo crecer las ventas.</b> Pasar de transaccional a contratado, y de software interno a software con ingreso propio, vale más que sumar clientes al ritmo actual. Los números de nuestro caso los corrimos aparte y no van en este documento.</p>
-    <p><b>Y una advertencia que falta en todo análisis de este tipo:</b> el precio de la empresa no es lo que reciben los socios. Entre medio están las <span class="t" data-d="El orden en que se reparte la plata cuando se vende. Los inversionistas con preferencia cobran primero, y recién después se reparte el resto entre los fundadores. En ventas chicas, los fundadores pueden recibir mucho menos de lo que sugiere el precio de la empresa.">preferencias de liquidación</span> del capital ya levantado, los <span class="t" data-d="Parte del precio que queda condicionada a que la empresa cumpla metas después de la venta. Si no se cumplen, no se paga. Puede ser un tercio del total o más.">earn-outs</span>, los ajustes por deuda neta y capital de trabajo, y los compromisos de permanencia de los fundadores. <b>Antes de discutir a qué múltiplo vendemos, hay que saber cuánto de eso llega efectivamente a los socios.</b> Ese cálculo no está hecho.</p>
-  </div>
-</section>
-
-<section>
-  <h2><span class="num">02</span>Qué les gusta</h2>
-  <p class="sub">Lo que sube el precio</p>
-  <ul>
-    <li><b>Contratos largos.</b> De 24 meses pa arriba. Es el factor que mas mueve la aguja: con 70% de los ingresos contratados saltas de 5x a 7x</li>
-    <li><b>Ser <span class="t" data-d="Sin activos pesados propios. Arriendas las bodegas en vez de comprarlas. Vale más porque el comprador no hereda ladrillos, hereda una operación.">asset-light</span>.</b> Nuestros <span class="t" data-d="Bodega chica dentro de la ciudad, sin público. Existe solo para despachar rápido. Es lo que tenemos en Santiago.">dark stores</span> arrendados juegan a favor. Comprar galpones jugaria en contra</li>
-    <li><b><span class="t" data-d="Software as a Service. Software que se cobra por suscripción mensual o anual en vez de venderse una vez. Es el modelo que hace que un comprador te valore como empresa de software y no como operador logístico.">SaaS</span>.</b> El software es lo que separa un <span class="t" data-d="Third-party logistics. El operador que guarda, empaca y despacha por otro. Es literalmente lo que hace Amplifica.">3PL</span> de 6x de una plataforma de 10x. Pero tiene que tener <span class="t" data-d="Annual Recurring Revenue. Ingreso recurrente anual, lo que un cliente paga todos los años por suscripción. Es el ingreso que más valoran los compradores porque es predecible.">ARR</span> propio y medible, no ser un costo interno disfrazado de producto</li>
-    <li><b>Cartera repartida.</b> Ningun cliente sobre el 25% de los ingresos</li>
-  </ul>
-</section>
-
-<section>
-  <h2><span class="num">03</span>Qué los espanta</h2>
-  <p class="sub">Lo que mata el deal en la <span class="t" data-d="Due diligence. La auditoría que hace el comprador antes de cerrar: revisa contratos, números, clientes, arriendos. Muchos deals se caen justo acá.">diligencia</span></p>
-  <ul class="bad">
-    <li><b>Un cliente con mas del 25 o 30% de los ingresos.</b> Les da miedo que ese cliente decida hacerlo el mismo</li>
-    <li><b>Ingresos transaccionales sin contratos.</b> Si el cliente se puede ir mañana, el comprador lo descuenta del precio</li>
-    <li><b>Rotacion alta de gente y dependencia de temporales</b></li>
-    <li><b>Arriendos malos o por vencer.</b> Suena chico, aparece siempre en diligencia</li>
-    <li><b>Un solo pais.</b> En LatAm esto pesa mucho</li>
-  </ul>
-</section>
-
-<section>
-  <h2><span class="num">04</span>Dónde estamos vs. dónde nos piden estar</h2>
-  <p class="sub">El <span class="t" data-d="Comparar dónde estás hoy contra dónde te exigen estar. La diferencia entre las dos cosas es, literalmente, el plan de trabajo.">gap-analysis</span> contra Stord y Cubbo</p>
-  <div class="tbl">
-  <table>
-    <thead><tr><th>Dimensión</th><th>Amplifica hoy</th><th>Perfil que le encajaría a Stord (inferencia nuestra)</th><th>Perfil que le encajaría a Cubbo (inferencia nuestra)</th><th>Brecha</th></tr></thead>
-    <tbody>
-      <tr><td>Geografía</td><td data-l="Hoy">Solo Santiago</td><td data-l="Encajaría a Stord (inferencia)">Multi-país</td><td data-l="Encajaría a Cubbo (inferencia)">México + Brasil + 1</td><td data-l="Brecha"><span class="pill p-red">Crítica</span></td></tr>
-      <tr><td>Tamaño</td><td data-l="Hoy"><span class="t" data-d="La etapa antes de la primera ronda institucional grande. Todavía estás probando que el modelo escala.">Pre-Serie A</span></td><td data-l="Encajaría a Stord (inferencia)">US$10–25M ingresos</td><td data-l="Encajaría a Cubbo (inferencia)">US$5–15M</td><td data-l="Brecha"><span class="pill p-red">Crítica</span></td></tr>
-      <tr><td><span class="t" data-d="Utilidad antes de intereses, impuestos, depreciación y amortización. En simple: cuánta plata genera la operación en sí misma, antes de contabilidad y financiamiento.">EBITDA</span></td><td data-l="Hoy">Cerca de cero</td><td data-l="Encajaría a Stord (inferencia)">Positivo, o entra vía <span class="t" data-d="Empresa en problemas que se vende barata y rápido. Stord ha comprado varias así.">distressed</span></td><td data-l="Encajaría a Cubbo (inferencia)">Menos exigente</td><td data-l="Brecha"><span class="pill p-amb">Alta</span></td></tr>
-      <tr><td>Software</td><td data-l="Hoy">Turbo interno, sin ARR</td><td data-l="Encajaría a Stord (inferencia)"><span class="t" data-d="Warehouse Management System y Order Management System. El software que controla la bodega y los pedidos. Turbo es exactamente esto.">WMS/OMS</span> propio, obligatorio</td><td data-l="Encajaría a Cubbo (inferencia)">Igual</td><td data-l="Brecha"><span class="pill p-amb">Media</span></td></tr>
-      <tr><td>Contratos</td><td data-l="Hoy">Transaccional</td><td data-l="Encajaría a Stord (inferencia)">70% a 24 meses</td><td data-l="Encajaría a Cubbo (inferencia)">Menos exigente</td><td data-l="Brecha"><span class="pill p-amb">Alta</span></td></tr>
-      <tr><td>Concentración</td><td data-l="Hoy">Por medir</td><td data-l="Encajaría a Stord (inferencia)">Bajo 25%</td><td data-l="Encajaría a Cubbo (inferencia)">Bajo 25%</td><td data-l="Brecha"><span class="pill p-amb">Verificar</span></td></tr>
-      <tr><td>Asset-light</td><td data-l="Hoy">Dark stores arrendados</td><td data-l="Encajaría a Stord (inferencia)">Cumple</td><td data-l="Encajaría a Cubbo (inferencia)">Cumple</td><td data-l="Brecha"><span class="pill p-ok">OK</span></td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <div class="src">
-    <h3>Fuentes de información</h3>
-    <p><b>Aviso primero: ni Stord ni Cubbo publican criterios de adquisición.</b> Ninguna de las dos tiene un documento que diga "compramos empresas con X ingresos". Las dos columnas de arriba son mi inferencia, no una lista oficial. Las armé de tres fuentes distintas y el nivel de confianza no es el mismo en todas.</p>
-    <ul>
-      <li><span class="tag t-ver">Verificado</span><b>Qué ha comprado Stord.</b> Ware2Go se lo compraron a UPS y sumó <b>21</b> centros. Shipwire se lo compraron a CEVA Logistics, cerró el 1 de enero de 2026 y sumó otros 12 nodos. También asumieron un centro de Quiet Logistics en Dallas, en un acuerdo con American Eagle mientras Quiet se desmantelaba: capacidad tomada sin pagar por la empresa.</li>
-      <li><span class="tag t-ver">Verificado</span><b>Pero Stord no escala comprando.</b> De sus cerca de 100 centros, <b>solo unos 20 son propios y unos 80 son de partners</b> corriendo su software. Eso cambia la conclusión obvia: el camino natural con Stord es <b>ser su partner en el Cono Sur, no ser comprados por ellos</b>. Y si somos partner, la pregunta incómoda es qué los llevaría a comprar algo que ya les sirve por contrato.</li>
-      <li><span class="tag t-ver">Verificado</span><b>Cuánto pesa Stord.</b> Serie F de US$250M a valorización de US$3.000M en mayo de 2026. La Serie E anterior, de más de US$200M liderada por Strike Capital con deuda de First Citizens y ORIX USA, fue a US$1.500M: duplicaron valorización en doce meses.</li>
-      <li><span class="tag t-ver">Verificado</span><b>Dónde está Cubbo.</b> Semilla de US$4M liderada por SV Latam Capital y pre-Serie A liderada por Gerdau Next Ventures, de monto no revelado. Hoy se describe operando en <b>México y Brasil</b>: Colombia salió de su huella. <b>Su última ronda conocida es de 2022</b>, hace cuatro años.</li>
-      <li><span class="tag t-inf">Inferido, y con una sola fuente</span><b>Los umbrales numéricos.</b> El 70% de ingresos contratados a 24 meses, la concentración bajo 25%, los rangos de múltiplos y el requisito de EBITDA positivo <b>no salen de Stord ni de Cubbo</b>. Vienen de <a href="https://ctacquisitions.com/how-to-sell-a-3pl-business/" target="_blank" rel="noopener">CT Acquisitions</a>, un advisor estadounidense: <b>es una sola fuente y su data es de EE.UU., no de Chile ni de LatAm</b>. No tenemos comparable local. Trátenlos como referencia gruesa, no como umbral.</li>
-      <li><span class="tag t-inf">Inferido</span><b>Los rangos de ingresos por comprador.</b> Los estimé cruzando el tamaño de lo que cada uno ha comprado con su etapa de financiamiento. Es lo más débil de la tabla. Tratenlo como orden de magnitud.</li>
-      <li><span class="tag t-inf">Ojo con la banda</span><b>A nuestro tamaño puede que ni apliquen estos múltiplos.</b> Los rangos de arriba son para empresas que se valoran por EBITDA. Un operador de nuestro porte suele valorarse por <span class="t" data-d="Seller's Discretionary Earnings. La utilidad del dueño: EBITDA más el sueldo y los gastos del fundador. Se usa en empresas chicas, donde el dueño y la empresa no están del todo separados. Los múltiplos de SDE son más bajos que los de EBITDA.">SDE</span>, con múltiplos más bajos. Hay que confirmar en qué banda caemos antes de usar cualquier número de esta nota.</li>
-    </ul>
-    <p><b>Lo incómodo que apareció mientras revisaba:</b> Cubbo anunció su entrada a Chile en <b>septiembre de 2021</b> y todavía no llega. Cinco años. Peor: su producto nuevo es <b>Merchant of Record</b>, o sea vender en mercados nuevos <b>sin montar estructura local</b>. Si esa es su estrategia, puede que Chile ya no sea un país que necesiten comprar. Entrarían solos, sin nosotros.</p>
-  </div>
-</section>
-
-<section>
-  <h2><span class="num">05</span>Stord y Cubbo de cerca</h2>
-  <p class="sub">Los dos que importan</p>
-
-  <div class="who">
-    <p><b>Stord</b> — Empresa de Atlanta que junta bodegas, transporte y software en una sola plataforma de fulfillment, y que crece comprando operadores logísticos. Es el <span class="t" data-d="Empresa que compra competidores más chicos para armar una sola plataforma grande. Su crecimiento viene tanto de comprar como de vender.">consolidador</span> más activo del rubro. Sitio: <a href="https://www.stord.com" target="_blank" rel="noopener">stord.com</a> · Sus anuncios de compras: <a href="https://www.stord.com/newsroom" target="_blank" rel="noopener">stord.com/newsroom</a></p>
-    <p><b>Cubbo</b> — Fulfillment urbano para e-commerce en LatAm, fundada por Josu Gurtubay y Brian York. Bodegas dentro de las ciudades y software propio, igual que nuestro modelo. Sitio: <a href="https://www.cubbo.com" target="_blank" rel="noopener">cubbo.com</a></p>
-  </div>
-
-  <div class="tbl">
-  <table>
-    <thead><tr><th>Stord</th><th>Dato</th></tr></thead>
-    <tbody>
-      <tr><td>Tamaño</td><td data-l="Dato">Serie F de US$250M a valorización de <b>US$3.000M</b> (mayo 2026), el doble que doce meses antes. Cerca de 100 centros de fulfillment en el mundo, más de 1.000 clientes y sobre US$15.000M de <span class="t" data-d="Gross Merchandise Value. El valor total de la mercadería que pasa por la plataforma. Ojo: no es el ingreso de Stord, es lo que venden sus clientes. El ingreso de Stord es la comisión sobre eso.">GMV</span> al año. Rentables desde 2024. <a href="https://www.stord.com/newsroom/stord-raises-250m-series-f" target="_blank" rel="noopener">Serie F</a> · <a href="https://www.stord.com/about" target="_blank" rel="noopener">About</a></td></tr>
-      <tr><td>Qué ha comprado</td><td data-l="Dato">Ware2Go, comprada a UPS el 19-may-2025: <b>+21 centros</b> y 2,5M de pies cuadrados, cuando Stord tenía 11 nodos (<a href="https://www.stord.com/newsroom/stord-acquires-ware2go-from-ups" target="_blank" rel="noopener">fuente</a>) · Shipwire, comprada a CEVA Logistics, cerró 1-ene-2026, +12 nodos (<a href="https://www.prnewswire.com/news-releases/stord-acquires-shipwire-from-ceva-logistics-extending-nationwide-and-global-coverage-302652820.html" target="_blank" rel="noopener">fuente</a>) · centro de Quiet Logistics en Dallas (<a href="https://www.stord.com/newsroom/stord-assumes-quiet-logistics-dallas-center" target="_blank" rel="noopener">fuente</a>) · antes: Fulfillment Works, ProPack y Pitney Bowes E-Commerce</td></tr>
-      <tr><td>Tickets</td><td data-l="Dato">Desde menos de US$10M hasta plataformas grandes</td></tr>
-      <tr><td>Su jugada</td><td data-l="Dato"><span class="t" data-d="Comprar operadores logísticos a 5–7x EBITDA y meterlos dentro de una empresa a la que el mercado valora sobre ventas. El spread entre las dos bases se lo queda el comprador, no el vendedor.">Arbitraje de valoración</span>: compra logística a 5–7x EBITDA y la mete bajo una valorización que el mercado calcula sobre ventas. <b>Ese spread se lo queda Stord, no nosotros</b></td></tr>
-      <tr><td>Qué busca</td><td data-l="Dato">Red física + clientes <span class="t" data-d="Direct-to-consumer. Marca que le vende directo a la persona, sin pasar por retail. Casi todos nuestros clientes son DTC.">DTC</span> + capacidad en geografías nuevas</td></tr>
-      <tr><td>El riesgo</td><td data-l="Dato">Depende de seguir levantando plata. Si el mercado se enfría, el M&amp;A se congela</td></tr>
-      <tr><td>Cómo entrarles</td><td data-l="Dato">Ser su nodo del Cono Sur. Hay que llegar con clientes internacionales que ya quieren vender en Chile</td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <div class="tbl">
-  <table>
-    <thead><tr><th>Cubbo</th><th>Dato</th></tr></thead>
-    <tbody>
-      <tr><td>Tamaño</td><td data-l="Dato">Opera en México y Brasil. Semilla de US$4M con SV Latam Capital y pre-Serie A liderada por Gerdau Next Ventures (<a href="https://latamlist.com/e-commerce-fulfillment-platform-cubbo-closed-pre-series-a-round/" target="_blank" rel="noopener">fuente</a>)</td></tr>
-      <tr><td>Su jugada</td><td data-l="Dato">Ser el líder de fulfillment e-commerce de LatAm</td></tr>
-      <tr><td>Qué busca</td><td data-l="Dato">Cobertura en países que no tiene. Chile calificaba, pero lo anunciaron en <b>septiembre de 2021</b> y en cinco años no han llegado. Con Merchant of Record pueden servir Chile sin montar nada acá</td></tr>
-      <tr><td>Forma del deal</td><td data-l="Dato">Fusión. Se paga en acciones, no en cash</td></tr>
-      <tr><td>Lo bueno</td><td data-l="Dato">Es alcanzable ahora, sin esperar 3 años</td></tr>
-      <tr><td>Lo malo</td><td data-l="Dato">No es plata en el bolsillo. Es cambiar acciones chilenas por acciones regionales</td></tr>
-    </tbody>
-  </table>
-  </div>
-</section>
-
-<section>
-  <h2><span class="num">06</span>Glosario</h2>
-  <p class="sub">Los términos subrayados del documento, más algunos que conviene tener a mano</p>
-  <div class="gloss"><dl>
-    <div class="row"><dt>3PL</dt><dd>Third-party logistics. El operador que guarda, empaca y despacha por otro. Es lo que hace Amplifica.</dd></div>
-    <div class="row"><dt>Dark store</dt><dd>Bodega chica dentro de la ciudad, sin público. Existe solo para despachar rápido.</dd></div>
-    <div class="row"><dt>EBITDA</dt><dd>Utilidad antes de intereses, impuestos, depreciación y amortización. En simple: cuánta plata genera la operación en sí misma.</dd></div>
-    <div class="row"><dt>Múltiplo EBITDA (EV/EBITDA)</dt><dd>Precio de venta = EBITDA × múltiplo. Si generas 1 millón y te pagan 7x, la empresa vale 7 millones. Es la base estándar en logística.</dd></div>
-    <div class="row"><dt>Múltiplo de ventas</dt><dd>Precio dividido por los ingresos anuales, sin mirar la utilidad. Es la base que se usa en software y en empresas de alto crecimiento. <b>No es comparable con un múltiplo de EBITDA:</b> 10x ventas y 10x EBITDA pueden diferir en cinco o seis veces el precio.</dd></div>
-    <div class="row"><dt>ARR</dt><dd>Annual Recurring Revenue. Ingreso recurrente anual, lo que un cliente paga todos los años por suscripción.</dd></div>
-    <div class="row"><dt>Asset-light</dt><dd>Sin activos pesados propios. Arriendas las bodegas en vez de comprarlas. Vale más.</dd></div>
-    <div class="row"><dt>GMV</dt><dd>Gross Merchandise Value. El valor total de la mercadería que pasa por una plataforma. <b>No es el ingreso de la plataforma:</b> es lo que venden sus clientes. El ingreso es la comisión sobre eso.</dd></div>
-    <div class="row"><dt>DTC</dt><dd>Direct-to-consumer. Marca que le vende directo a la persona, sin pasar por retail.</dd></div>
-    <div class="row"><dt>WMS / OMS</dt><dd>Warehouse Management System y Order Management System. El software que controla bodega y pedidos. Turbo es esto.</dd></div>
-    <div class="row"><dt>SaaS</dt><dd>Software as a Service. Software que se cobra por suscripción mensual o anual en vez de venderse una vez.</dd></div>
-    <div class="row"><dt>Pre-Serie A</dt><dd>La etapa de financiamiento antes de la primera ronda institucional grande.</dd></div>
-    <div class="row"><dt>Consolidador</dt><dd>Empresa que crece comprando competidores más chicos para armar una sola plataforma grande.</dd></div>
-    <div class="row"><dt>Bolt-on</dt><dd>Compra chica que se enchufa a una plataforma que ya existe, para sumarle capacidad o geografía.</dd></div>
-    <div class="row"><dt>Distressed</dt><dd>Empresa en problemas que se vende barata y rápido.</dd></div>
-    <div class="row"><dt>Arbitraje de valoración</dt><dd>Comprar operadores a múltiplo de EBITDA y meterlos dentro de una empresa que el mercado valora sobre ventas. El spread entre las dos bases se lo queda el comprador.</dd></div>
-    <div class="row"><dt>Concentración de clientes</dt><dd>Qué porcentaje de los ingresos viene de un solo cliente. Mientras más alto, más riesgo ve el comprador.</dd></div>
-    <div class="row"><dt>Due diligence</dt><dd>La auditoría que hace el comprador antes de cerrar. Ahí se caen muchos deals.</dd></div>
-    <div class="row"><dt>Gap-analysis</dt><dd>Comparar dónde estás hoy contra dónde te exigen estar. La diferencia es el plan de trabajo.</dd></div>
-    <div class="row"><dt>SDE</dt><dd>Seller’s Discretionary Earnings. La utilidad del dueño: EBITDA más el sueldo y los gastos del fundador. Se usa en empresas chicas y sus múltiplos son más bajos que los de EBITDA.</dd></div>
-<div class="row"><dt>Preferencia de liquidación</dt><dd>El orden en que se reparte la plata al vender. Los inversionistas con preferencia cobran primero; los fundadores reciben lo que sobra.</dd></div>
-<div class="row"><dt>Earn-out</dt><dd>Parte del precio condicionada a cumplir metas después de la venta. Si no se cumplen, no se paga.</dd></div>
-<div class="row"><dt>Merchant of Record</dt><dd>Vender en un país sin montar estructura local: otro figura como el vendedor legal y se hace cargo de impuestos y cobros.</dd></div>
-<div class="row"><dt>Exit</dt><dd>La venta de la empresa. Cuando los socios convierten acciones en plata.</dd></div>
-    <div class="row"><dt>M&amp;A</dt><dd>Mergers and Acquisitions. Fusiones y adquisiciones, el mundo de comprar y vender empresas.</dd></div>
-  </dl></div>
-</section>
-
-<footer>
-  <p>Fuentes: <a href="https://www.stord.com/newsroom" target="_blank" rel="noopener">Stord Newsroom</a>, <a href="https://www.prnewswire.com/news-releases/stord-acquires-shipwire-from-ceva-logistics-extending-nationwide-and-global-coverage-302652820.html" target="_blank" rel="noopener">PR Newswire</a>, <a href="https://www.stord.com/newsroom/stord-acquires-ware2go-from-ups" target="_blank" rel="noopener">Stord · Ware2Go</a>, <a href="https://ctacquisitions.com/how-to-sell-a-3pl-business/" target="_blank" rel="noopener">CT Acquisitions</a>, <a href="https://www.capstonepartners.com/insights/article-3pl-market-update/" target="_blank" rel="noopener">Capstone Partners</a>, <a href="https://latamlist.com/e-commerce-fulfillment-platform-cubbo-closed-pre-series-a-round/" target="_blank" rel="noopener">LatamList</a>, <a href="https://www.cubbo.com" target="_blank" rel="noopener">Cubbo</a>, Capstone Partners (Warehousing &amp; Fulfillment M&amp;A Update), CT Acquisitions (How to Sell a 3PL Company).</p>
-  <p>Documento interno de trabajo. Las cifras de terceros son públicas y están linkeadas. Los umbrales de exigencia atribuidos a Stord y Cubbo son inferencia mía, no criterios publicados por ellos: ver "Fuentes de información" en la sección 04.</p>
-</footer>
-
+<div id="puerta">
+  <form class="caja" id="form">
+    <p class="kick">Amplifica · Nota de directorio</p>
+    <h1>Quién nos podría comprar algún día</h1>
+    <p>Documento interno. Pide la clave a Fabián.</p>
+    <label for="c">Clave</label>
+    <input type="password" id="c" autocomplete="current-password" autofocus>
+    <button type="submit" id="b">Abrir</button>
+    <p id="msg"></p>
+  </form>
 </div>
 
-<div id="pop" role="tooltip" aria-hidden="true"></div>
+<div id="listo"></div>
 
 <script>
-(function(){
-  var pop = document.getElementById('pop');
-  var cur = null;
-  var arrowStyle = document.createElement('style');
-  document.head.appendChild(arrowStyle);
+const BLOB = "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";
+const ITER = 200000;
 
-  function hide(){
-    if(!cur) return;
-    cur.classList.remove('on');
-    cur = null;
-    pop.classList.remove('show');
-    pop.setAttribute('aria-hidden','true');
-  }
+const $ = id => document.getElementById(id);
+const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
 
-  function show(el){
-    if(cur === el){ hide(); return; }
-    if(cur) cur.classList.remove('on');
-    cur = el;
-    el.classList.add('on');
+async function abrir(clave){
+  const raw = b64(BLOB);
+  const sal = raw.slice(0,16), iv = raw.slice(16,28), datos = raw.slice(28);
+  const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(clave), "PBKDF2", false, ["deriveKey"]);
+  const llave = await crypto.subtle.deriveKey(
+    { name:"PBKDF2", salt:sal, iterations:ITER, hash:"SHA-256" },
+    base, { name:"AES-GCM", length:256 }, false, ["decrypt"]);
+  const plano = await crypto.subtle.decrypt({ name:"AES-GCM", iv:iv }, llave, datos);
 
-    var term = el.textContent.trim();
-    pop.innerHTML = '<span class="term"></span>';
-    pop.firstChild.textContent = term;
-    pop.appendChild(document.createTextNode(el.getAttribute('data-d')));
+  // viene comprimido con gzip
+  const ds = new DecompressionStream("gzip");
+  const texto = await new Response(new Blob([plano]).stream().pipeThrough(ds)).text();
+  return JSON.parse(texto);
+}
 
-    pop.classList.add('show');
-    pop.setAttribute('aria-hidden','false');
-    pop.style.left = '-9999px';
-    pop.style.top = '0';
-
-    // measure then place
-    var pw = pop.offsetWidth, ph = pop.offsetHeight;
-    var r = el.getBoundingClientRect();
-    var vw = window.innerWidth, vh = window.innerHeight;
-    var M = 12, GAP = 10;
-
-    var left = r.left + r.width/2 - pw/2;
-    left = Math.max(M, Math.min(left, vw - pw - M));
-
-    var below = r.bottom + GAP + ph <= vh - M;
-    // if neither fits well, pick the roomier side
-    if(!below && r.top - GAP - ph < M){
-      below = (vh - r.bottom) > r.top;
-    }
-    var top = below ? r.bottom + GAP : r.top - GAP - ph;
-    top = Math.max(M, Math.min(top, vh - ph - M));
-
-    pop.style.left = Math.round(left) + 'px';
-    pop.style.top  = Math.round(top) + 'px';
-
-    pop.classList.toggle('below', below);
-    pop.classList.toggle('above', !below);
-
-    // arrow horizontal position, clamped inside the bubble
-    var ax = r.left + r.width/2 - left - 6;
-    ax = Math.max(14, Math.min(ax, pw - 26));
-    arrowStyle.textContent = '#pop:after{left:' + Math.round(ax) + 'px}';
-  }
-
-  document.addEventListener('click', function(e){
-    var t = e.target.closest ? e.target.closest('.t') : null;
-    if(t){ e.stopPropagation(); show(t); return; }
-    if(!e.target.closest || !e.target.closest('#pop')) hide();
-  });
-
-  document.querySelectorAll('.t').forEach(function(el){
-    el.setAttribute('tabindex','0');
-    el.setAttribute('role','button');
-    el.addEventListener('keydown', function(e){
-      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); show(el); }
+$("form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const msg = $("msg"), btn = $("b");
+  msg.style.color = "var(--ink-3)";
+  msg.textContent = "Abriendo…";
+  btn.disabled = true;
+  try {
+    const doc = await abrir($("c").value);
+    const est = document.createElement("style");
+    est.textContent = doc.css;
+    document.head.appendChild(est);
+    $("puerta").remove();
+    const cont = $("listo");
+    cont.innerHTML = doc.html;
+    cont.style.display = "block";
+    document.title = "Amplifica · Quién nos podría comprar";
+    cont.querySelectorAll("script").forEach(v => {
+      const n = document.createElement("script");
+      n.textContent = v.textContent;
+      document.body.appendChild(n);
+      v.remove();
     });
-  });
-
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') hide(); });
-  window.addEventListener('scroll', hide, {passive:true});
-  window.addEventListener('resize', hide);
-})();
+  } catch (err) {
+    msg.style.color = "var(--warn)";
+    msg.textContent = "Clave incorrecta";
+    btn.disabled = false;
+    $("c").select();
+  }
+});
 </script>
 
 </body>
